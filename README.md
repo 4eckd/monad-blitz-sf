@@ -1,1 +1,1 @@
-# monad-blitz-sf
+# Monad Blitz SF Submission Process
