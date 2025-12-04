@@ -1,0 +1,211 @@
+name: Auto Label PRs
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, edited]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+
+jobs:
+  label-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Auto Label Based on Files
+        uses: actions/labeler@v5
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          configuration-path: .github/labeler.yml
+          sync-labels: true
+
+  add-size-label:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Calculate PR Size
+        id: size
+        run: |
+          # Get changed lines
+          ADDITIONS=$(gh pr view ${{ github.event.pull_request.number }} --json additions -q .additions)
+          DELETIONS=$(gh pr view ${{ github.event.pull_request.number }} --json deletions -q .deletions)
+          TOTAL=$((ADDITIONS + DELETIONS))
+
+          # Determine size label
+          if [ $TOTAL -lt 10 ]; then
+            SIZE="effort: xs"
+          elif [ $TOTAL -lt 100 ]; then
+            SIZE="effort: s"
+          elif [ $TOTAL -lt 500 ]; then
+            SIZE="effort: m"
+          elif [ $TOTAL -lt 1000 ]; then
+            SIZE="effort: l"
+          else
+            SIZE="effort: xl"
+          fi
+
+          echo "size=$SIZE" >> $GITHUB_OUTPUT
+          echo "Total changes: $TOTAL lines → $SIZE"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create Label If Not Exists
+        continue-on-error: true
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const labelName = '${{ steps.size.outputs.size }}';
+            try {
+              await github.rest.issues.createLabel({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                name: labelName,
+                color: 'D4C5F9',
+                description: 'PR size estimation'
+              });
+              console.log(`Created label: ${labelName}`);
+            } catch (error) {
+              if (error.status === 422) {
+                console.log(`Label ${labelName} already exists`);
+              } else {
+                throw error;
+              }
+            }
+
+      - name: Add Size Label
+        run: |
+          gh pr edit ${{ github.event.pull_request.number }} --add-label "${{ steps.size.outputs.size }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  check-missing-labels:
+    runs-on: ubuntu-latest
+    needs: [label-pr, add-size-label]
+    steps:
+      - name: Check Required Labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const labels = pr.labels.map(l => l.name);
+
+            const requiredPrefixes = ['type:', 'area:', 'priority:'];
+            const missing = [];
+
+            for (const prefix of requiredPrefixes) {
+              if (!labels.some(l => l.startsWith(prefix))) {
+                missing.push(prefix);
+              }
+            }
+
+            if (missing.length > 0) {
+              const comment = `⚠️ **Missing Required Labels**
+
+              This PR is missing the following label types:
+              ${missing.map(m => `- \`${m}*\``).join('\n')}
+
+              Please add appropriate labels:
+              - **type:** feature, bug, enhancement, docs, etc.
+              - **area:** ui-generation, brand-factory, contracts, etc.
+              - **priority:** critical, high, medium, low
+
+              See [Tag Usage Guide](.github/TAG_USAGE_GUIDE.md) for details.`;
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: comment
+              });
+            }
+
+  suggest-additional-labels:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Suggest Labels Based on PR Content
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const title = pr.title.toLowerCase();
+            const body = (pr.body || '').toLowerCase();
+            const labels = pr.labels.map(l => l.name);
+
+            const suggestions = [];
+
+            // Check for accessibility keywords
+            if ((title + body).match(/wcag|accessibility|a11y|aria|screen reader/)) {
+              if (!labels.some(l => l.startsWith('compliance: wcag'))) {
+                suggestions.push('`compliance: wcag-aa`');
+              }
+              if (!labels.includes('type: accessibility')) {
+                suggestions.push('`type: accessibility`');
+              }
+            }
+
+            // Check for security keywords
+            if ((title + body).match(/security|vulnerability|cve|exploit|audit/)) {
+              if (!labels.includes('type: security')) {
+                suggestions.push('`type: security`');
+              }
+              if (!labels.includes('compliance: security')) {
+                suggestions.push('`compliance: security`');
+              }
+            }
+
+            // Check for breaking changes
+            if ((title + body).match(/breaking|breaking change|breaking:/)) {
+              if (!labels.includes('workflow: breaking-change')) {
+                suggestions.push('`workflow: breaking-change`');
+              }
+            }
+
+            // Check for AI/LLM work
+            if ((title + body).match(/ai|llm|prompt|generation|gpt|claude/)) {
+              if (!labels.some(l => l.startsWith('ai:'))) {
+                suggestions.push('`ai: prompt-engineering` or `ai: generation-quality`');
+              }
+            }
+
+            // Check for Web3 work
+            if ((title + body).match(/web3|contract|solidity|wallet|nft|x402/)) {
+              if (!labels.some(l => l.startsWith('web3:'))) {
+                suggestions.push('`web3: contract-audit` or `web3: gas-optimization`');
+              }
+            }
+
+            // Check for testing mentions
+            if ((title + body).match(/test|testing|coverage|spec/)) {
+              if (!labels.includes('quality: needs-tests')) {
+                // Don't suggest if already has tests
+              }
+            } else if (!labels.includes('type: test')) {
+              // No testing mentioned, might need tests
+              if (!labels.includes('type: docs') && !labels.includes('type: devops')) {
+                suggestions.push('`quality: needs-tests` (if applicable)');
+              }
+            }
+
+            if (suggestions.length > 0) {
+              const comment = `💡 **Label Suggestions**
+
+              Based on the PR content, you might want to add:
+              ${suggestions.map(s => `- ${s}`).join('\n')}
+
+              These are just suggestions - feel free to ignore if not applicable.`;
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: pr.number,
+                body: comment
+              });
+            }

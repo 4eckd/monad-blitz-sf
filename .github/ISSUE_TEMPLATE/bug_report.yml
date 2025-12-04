@@ -1,0 +1,139 @@
+name: Bug Report
+description: Report a bug or unexpected behavior
+title: "[Bug] "
+labels: ["type: bug", "priority: medium", "status: needs-research"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! Please provide as much detail as possible.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Bug Severity
+      description: How severe is this bug?
+      options:
+        - Critical (Production down, data loss, security issue)
+        - High (Major feature broken, blocking work)
+        - Medium (Feature partially broken, workaround exists)
+        - Low (Cosmetic issue, minor inconvenience)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected Area
+      description: Which part of the system is affected?
+      options:
+        - UI Generation
+        - Color System
+        - Brand Factory
+        - Design Tokens
+        - Components
+        - Smart Contracts
+        - Payments (x402)
+        - NFT Minting
+        - API
+        - Build/CI/CD
+        - Tests
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is
+      placeholder: When I try to [action], the system [unexpected behavior]...
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this bug?
+      placeholder: |
+        1. Go to '...'
+        2. Click on '...'
+        3. Enter '...'
+        4. See error
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: I expected...
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: Instead, I saw...
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Please provide environment details
+      value: |
+        - OS: [e.g., macOS 14.0, Windows 11, Ubuntu 22.04]
+        - Browser: [e.g., Chrome 120, Firefox 121, Safari 17]
+        - Node version: [e.g., 20.10.0]
+        - Package manager: [e.g., pnpm 9.0.0]
+        - Wallet (if Web3): [e.g., MetaMask 11.0]
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs/Screenshots
+      description: Paste any error messages or attach screenshots
+      placeholder: |
+        ```
+        Error: ...
+        Stack trace...
+        ```
+
+  - type: checkboxes
+    id: bug-characteristics
+    attributes:
+      label: Bug Characteristics
+      description: Check all that apply
+      options:
+        - label: Regression (this used to work)
+        - label: Intermittent (doesn't happen every time)
+        - label: Blocks other work
+        - label: Security-related
+        - label: Accessibility issue (WCAG violation)
+        - label: Performance degradation
+        - label: Data loss risk
+        - label: Web3/blockchain-related
+
+  - type: textarea
+    id: workaround
+    attributes:
+      label: Temporary Workaround
+      description: Have you found any way to work around this issue?
+      placeholder: I can temporarily...
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other information that might help

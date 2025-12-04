@@ -1,0 +1,222 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "app/globals.css",
+    "baseColor": "slate",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  },
+  "components": {
+    "button": {
+      "path": "components/ui/button.tsx",
+      "variants": ["primary", "secondary", "ghost", "link"],
+      "sizes": ["sm", "md", "lg", "xl"],
+      "status": "planned"
+    },
+    "input": {
+      "path": "components/ui/input.tsx",
+      "types": ["text", "email", "password", "number"],
+      "status": "planned"
+    },
+    "textarea": {
+      "path": "components/ui/textarea.tsx",
+      "status": "planned"
+    },
+    "select": {
+      "path": "components/ui/select.tsx",
+      "status": "planned"
+    },
+    "card": {
+      "path": "components/ui/card.tsx",
+      "variants": ["default", "outlined", "elevated"],
+      "status": "planned"
+    },
+    "header": {
+      "path": "components/layout/header.tsx",
+      "features": ["navigation", "logo", "wallet-connect"],
+      "status": "planned"
+    },
+    "footer": {
+      "path": "components/layout/footer.tsx",
+      "features": ["links", "social", "copyright"],
+      "status": "planned"
+    },
+    "hero": {
+      "path": "components/sections/hero.tsx",
+      "variants": ["default", "centered", "split"],
+      "status": "planned"
+    },
+    "progress-bar": {
+      "path": "components/ui/progress-bar.tsx",
+      "features": ["steps", "percentage", "animated"],
+      "status": "planned"
+    },
+    "brand-preview": {
+      "path": "components/brand/brand-preview.tsx",
+      "sections": ["logos", "colors", "typography", "tokens"],
+      "status": "planned"
+    },
+    "logo-display": {
+      "path": "components/brand/logo-display.tsx",
+      "variants": ["grid", "carousel", "comparison"],
+      "status": "planned"
+    },
+    "color-palette": {
+      "path": "components/brand/color-palette.tsx",
+      "features": ["swatches", "accessibility-info", "copy-hex"],
+      "status": "planned"
+    },
+    "typography-showcase": {
+      "path": "components/brand/typography-showcase.tsx",
+      "features": ["font-preview", "sizes", "weights"],
+      "status": "planned"
+    },
+    "token-viewer": {
+      "path": "components/brand/token-viewer.tsx",
+      "formats": ["json", "css", "scss", "tailwind"],
+      "status": "planned"
+    },
+    "component-preview": {
+      "path": "components/brand/component-preview.tsx",
+      "features": ["live-preview", "code-view", "copy-code"],
+      "status": "planned"
+    },
+    "generation-form": {
+      "path": "components/forms/generation-form.tsx",
+      "fields": ["business-idea", "audience", "style", "features"],
+      "status": "planned"
+    },
+    "nft-display": {
+      "path": "components/blockchain/nft-display.tsx",
+      "features": ["metadata", "image", "opensea-link"],
+      "status": "planned"
+    },
+    "wallet-connect": {
+      "path": "components/blockchain/wallet-connect.tsx",
+      "providers": ["metamask", "wallet-connect", "coinbase"],
+      "status": "planned"
+    },
+    "payment-modal": {
+      "path": "components/blockchain/payment-modal.tsx",
+      "features": ["x402", "price-display", "transaction-status"],
+      "status": "planned"
+    },
+    "alert": {
+      "path": "components/ui/alert.tsx",
+      "variants": ["success", "error", "warning", "info"],
+      "status": "planned"
+    },
+    "toast": {
+      "path": "components/ui/toast.tsx",
+      "positions": ["top-right", "top-center", "bottom-right"],
+      "status": "planned"
+    },
+    "dialog": {
+      "path": "components/ui/dialog.tsx",
+      "sizes": ["sm", "md", "lg", "xl", "full"],
+      "status": "planned"
+    },
+    "badge": {
+      "path": "components/ui/badge.tsx",
+      "variants": ["default", "secondary", "success", "warning", "error"],
+      "status": "planned"
+    },
+    "skeleton": {
+      "path": "components/ui/skeleton.tsx",
+      "variants": ["text", "circular", "rectangular"],
+      "status": "planned"
+    },
+    "spinner": {
+      "path": "components/ui/spinner.tsx",
+      "sizes": ["sm", "md", "lg"],
+      "status": "planned"
+    }
+  },
+  "layouts": {
+    "default": {
+      "path": "app/layout.tsx",
+      "status": "implemented"
+    },
+    "dashboard": {
+      "path": "components/layouts/dashboard-layout.tsx",
+      "features": ["sidebar", "header", "breadcrumbs"],
+      "status": "planned"
+    }
+  },
+  "pages": {
+    "home": {
+      "path": "app/page.tsx",
+      "status": "implemented"
+    },
+    "generate": {
+      "path": "app/generate/page.tsx",
+      "status": "planned"
+    },
+    "preview": {
+      "path": "app/preview/[id]/page.tsx",
+      "status": "planned"
+    },
+    "gallery": {
+      "path": "app/gallery/page.tsx",
+      "description": "NFT gallery of generated brands",
+      "status": "planned"
+    },
+    "docs": {
+      "path": "app/docs/page.tsx",
+      "description": "Documentation hub",
+      "status": "planned"
+    }
+  },
+  "hooks": {
+    "use-brand-generation": {
+      "path": "hooks/use-brand-generation.ts",
+      "description": "Hook for managing brand generation state",
+      "status": "planned"
+    },
+    "use-wallet": {
+      "path": "hooks/use-wallet.ts",
+      "description": "Hook for wallet connection via thirdweb",
+      "status": "planned"
+    },
+    "use-toast": {
+      "path": "hooks/use-toast.ts",
+      "description": "Hook for toast notifications",
+      "status": "planned"
+    },
+    "use-clipboard": {
+      "path": "hooks/use-clipboard.ts",
+      "description": "Hook for copying to clipboard",
+      "status": "planned"
+    }
+  },
+  "utilities": {
+    "cn": {
+      "path": "lib/utils/cn.ts",
+      "description": "Tailwind class name utility",
+      "status": "planned"
+    },
+    "format-token": {
+      "path": "lib/utils/format-token.ts",
+      "description": "Format design tokens",
+      "status": "planned"
+    },
+    "validate-brand-input": {
+      "path": "lib/utils/validate-brand-input.ts",
+      "description": "Validate user input for brand generation",
+      "status": "planned"
+    }
+  },
+  "version": "0.1.0",
+  "lastUpdated": "2025-12-04"
+}

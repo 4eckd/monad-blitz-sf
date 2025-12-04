@@ -1,0 +1,198 @@
+name: Web3 Security Issue
+description: Report a security concern with smart contracts or Web3 integration
+title: "[Security] "
+labels: ["type: security", "area: contracts", "web3: contract-audit", "compliance: security", "priority: critical"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ⚠️ **IMPORTANT**: If this is a critical vulnerability, please report it privately first.
+
+        For critical security issues, email security@machlabs.com instead of creating a public issue.
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How severe is this security issue?
+      options:
+        - Critical (Funds at risk, contract compromise)
+        - High (Potential exploit, data leak)
+        - Medium (Security best practice violation)
+        - Low (Informational, hardening opportunity)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Affected Component
+      description: What is affected?
+      options:
+        - Smart Contract
+        - x402 Payment Integration
+        - NFT Minting Contract
+        - Wallet Connection
+        - Transaction Signing
+        - Frontend Web3 Integration
+        - Backend API (Web3-related)
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: contract
+    attributes:
+      label: Contract/File Name
+      description: Which contract or file is affected?
+      placeholder: e.g., X402Payment.sol, NFTReward.sol
+
+  - type: textarea
+    id: vulnerability
+    attributes:
+      label: Vulnerability Description
+      description: Describe the security issue
+      placeholder: The contract is vulnerable to [attack type] because...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: vulnerability-type
+    attributes:
+      label: Vulnerability Type
+      description: What category does this fall into?
+      options:
+        - Reentrancy Attack
+        - Integer Overflow/Underflow
+        - Access Control Issue
+        - Front-running Vulnerability
+        - Denial of Service
+        - Gas Manipulation
+        - Timestamp Dependence
+        - Unchecked External Call
+        - Tx.origin Authentication
+        - Delegatecall to Untrusted Contract
+        - Private Data Exposure
+        - Signature Replay Attack
+        - Flash Loan Attack
+        - Price Oracle Manipulation
+        - Other
+
+  - type: textarea
+    id: exploit-scenario
+    attributes:
+      label: Exploit Scenario
+      description: How could an attacker exploit this?
+      placeholder: |
+        An attacker could:
+        1. Call function X with parameter Y
+        2. Reenter the contract via callback
+        3. Drain funds by...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proof-of-concept
+    attributes:
+      label: Proof of Concept
+      description: Provide code demonstrating the exploit (if safe to share)
+      placeholder: |
+        ```solidity
+        // Malicious contract
+        contract Exploit {
+            function attack() public {
+                // exploit code
+            }
+        }
+        ```
+      render: solidity
+
+  - type: textarea
+    id: affected-code
+    attributes:
+      label: Affected Code
+      description: Which lines of code are vulnerable?
+      placeholder: |
+        File: contracts/X402Payment.sol
+        Lines: 45-52
+
+        ```solidity
+        function withdraw() public {
+            // vulnerable code
+        }
+        ```
+      render: solidity
+
+  - type: textarea
+    id: impact
+    attributes:
+      label: Impact Assessment
+      description: What is the potential impact?
+      placeholder: |
+        - Financial impact: Could drain $X from contract
+        - User impact: Affects Y users
+        - Reputation impact: ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: mitigation
+    attributes:
+      label: Suggested Mitigation
+      description: How should this be fixed?
+      placeholder: |
+        1. Add reentrancy guard
+        2. Use OpenZeppelin's ReentrancyGuard
+        3. Check-Effects-Interactions pattern
+      render: solidity
+
+  - type: checkboxes
+    id: security-requirements
+    attributes:
+      label: Security Requirements for Fix
+      description: Check all that apply
+      options:
+        - label: Requires smart contract audit
+        - label: Requires formal verification
+        - label: Requires gas optimization review
+        - label: Requires testnet deployment first
+        - label: Requires security team approval
+        - label: Breaking change (requires migration)
+        - label: Requires emergency pause mechanism
+
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Links to similar vulnerabilities or relevant documentation
+      placeholder: |
+        - SWC Registry: https://swcregistry.io/docs/SWC-XXX
+        - Similar exploit: ...
+        - Audit report: ...
+
+  - type: dropdown
+    id: disclosure
+    attributes:
+      label: Disclosure Status
+      description: Is this publicly known?
+      options:
+        - Private (Not disclosed)
+        - Responsible Disclosure (Limited sharing)
+        - Public (Already known)
+    validations:
+      required: true
+
+  - type: input
+    id: discovered-by
+    attributes:
+      label: Discovered By
+      description: Who found this issue? (for security researcher credit)
+      placeholder: Your name or GitHub handle
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other relevant information

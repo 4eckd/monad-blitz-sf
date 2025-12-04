@@ -1,0 +1,245 @@
+name: Auto-Update Documentation
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'lib/**/*.ts'
+      - 'lib/**/*.tsx'
+      - 'components/**/*.ts'
+      - 'components/**/*.tsx'
+      - 'app/**/*.ts'
+      - 'app/**/*.tsx'
+      - 'tailwind.config.ts'
+      - 'components.json'
+  workflow_dispatch:
+
+jobs:
+  update-docs:
+    name: Update Documentation & Design Standards
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Extract Design Tokens
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const tailwindConfig = require('./tailwind.config.ts');
+
+          // Extract and format design tokens
+          const tokens = {
+            colors: tailwindConfig.theme?.extend?.colors || {},
+            spacing: tailwindConfig.theme?.extend?.spacing || {},
+            typography: {
+              fontFamily: tailwindConfig.theme?.extend?.fontFamily || {}
+            }
+          };
+
+          fs.writeFileSync(
+            'docs/design-tokens.json',
+            JSON.stringify(tokens, null, 2)
+          );
+
+          console.log('✅ Design tokens extracted');
+          EOF
+
+      - name: Generate Component Documentation
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+          const path = require('path');
+          const componentsConfig = require('./components.json');
+
+          // Generate markdown documentation for each component
+          const components = componentsConfig.components || {};
+
+          let markdown = '# Component Documentation\n\n';
+          markdown += `Last Updated: ${new Date().toISOString()}\n\n`;
+          markdown += '## Available Components\n\n';
+
+          for (const [name, config] of Object.entries(components)) {
+            markdown += `### ${name}\n\n`;
+            markdown += `- **Path**: \`${config.path}\`\n`;
+            markdown += `- **Status**: ${config.status}\n`;
+
+            if (config.variants) {
+              markdown += `- **Variants**: ${config.variants.join(', ')}\n`;
+            }
+
+            if (config.sizes) {
+              markdown += `- **Sizes**: ${config.sizes.join(', ')}\n`;
+            }
+
+            if (config.features) {
+              markdown += `- **Features**: ${config.features.join(', ')}\n`;
+            }
+
+            markdown += '\n';
+          }
+
+          fs.mkdirSync('docs', { recursive: true });
+          fs.writeFileSync('docs/components.md', markdown);
+
+          console.log('✅ Component documentation generated');
+          EOF
+
+      - name: Update Design Standards
+        run: |
+          node << 'EOF'
+          const fs = require('fs');
+
+          const standards = `# Design System Standards
+
+## Last Updated
+${new Date().toISOString()}
+
+## Critical Rules
+
+### ❌ NEVER Use Inline Styles
+
+Bad:
+\`\`\`tsx
+<div style={{ color: '#0066FF', padding: '16px' }}>
+  This is wrong
+</div>
+\`\`\`
+
+Good:
+\`\`\`tsx
+<div className="text-brand-primary p-md">
+  This follows the design system
+</div>
+\`\`\`
+
+### ❌ NEVER Use Inline HTML
+
+Bad:
+\`\`\`tsx
+<div>
+  <h1>Title</h1>
+  <button style={{ background: 'blue' }}>Click</button>
+</div>
+\`\`\`
+
+Good:
+\`\`\`tsx
+import { Button } from '@/components/ui/button';
+import { Heading } from '@/components/ui/heading';
+
+<div>
+  <Heading level={1}>Title</Heading>
+  <Button variant="primary">Click</Button>
+</div>
+\`\`\`
+
+## Design Tokens
+
+All design values must come from the design token system defined in:
+- \`tailwind.config.ts\` - Tailwind configuration
+- \`components.json\` - Component registry
+- \`docs/design-tokens.json\` - Extracted tokens
+
+## Utility Classes
+
+### Spacing
+- \`p-{size}\` - Padding
+- \`m-{size}\` - Margin
+- \`gap-{size}\` - Gap (flexbox/grid)
+
+Sizes: xs, sm, md, lg, xl, 2xl
+
+### Colors
+- \`text-brand-{name}\` - Text color
+- \`bg-brand-{name}\` - Background color
+- \`border-brand-{name}\` - Border color
+
+### Typography
+- \`font-heading\` - Heading font family
+- \`font-body\` - Body font family
+- \`text-{size}\` - Font size
+
+## Component Usage
+
+See [components.md](./components.md) for full component documentation.
+
+## Validation
+
+Run before commit:
+\`\`\`bash
+pnpm lint        # Check for inline styles
+pnpm type-check  # TypeScript validation
+\`\`\`
+`;
+
+          fs.writeFileSync('docs/design-standards.md', standards);
+
+          console.log('✅ Design standards updated');
+          EOF
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          git diff --quiet docs/ || echo "has_changes=true" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.check_changes.outputs.has_changes == 'true'
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: 'docs: auto-update documentation and design standards'
+          title: '📚 Auto-Update Documentation'
+          body: |
+            ## Automated Documentation Update
+
+            This PR was automatically generated to update documentation based on code changes.
+
+            ### Changes Include:
+            - ✅ Updated design tokens from `tailwind.config.ts`
+            - ✅ Regenerated component documentation from `components.json`
+            - ✅ Refreshed design standards
+
+            ### Files Updated:
+            - `docs/design-tokens.json`
+            - `docs/components.md`
+            - `docs/design-standards.md`
+
+            **Review and merge if accurate.**
+          branch: auto-docs-update
+          delete-branch: true
+          labels: |
+            documentation
+            automated
+          assignees: ${{ github.actor }}
+
+      - name: Summary
+        run: |
+          echo "### Documentation Update Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.check_changes.outputs.has_changes }}" == "true" ]; then
+            echo "✅ Documentation updated and PR created" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "ℹ️  No changes detected - documentation is up to date" >> $GITHUB_STEP_SUMMARY
+          fi

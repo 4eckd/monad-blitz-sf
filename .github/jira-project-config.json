@@ -1,0 +1,487 @@
+{
+  "project": {
+    "name": "MachLabs",
+    "key": "MACH",
+    "type": "kanban",
+    "description": "AI-powered design automation platform with Web3 integration",
+    "lead": "YOUR_ATLASSIAN_EMAIL",
+    "url": "https://github.com/machlabs/machlab"
+  },
+  "board": {
+    "name": "MachLabs Kanban Board",
+    "columns": [
+      {
+        "name": "Backlog",
+        "wipLimit": null,
+        "statuses": ["Backlog"]
+      },
+      {
+        "name": "To Do",
+        "wipLimit": 3,
+        "statuses": ["To Do", "Selected for Development"]
+      },
+      {
+        "name": "In Progress",
+        "wipLimit": 1,
+        "statuses": ["In Progress"]
+      },
+      {
+        "name": "Blocked",
+        "wipLimit": null,
+        "statuses": ["Blocked", "On Hold"]
+      },
+      {
+        "name": "Review",
+        "wipLimit": 1,
+        "statuses": ["Code Review", "In Review"]
+      },
+      {
+        "name": "Testing",
+        "wipLimit": 2,
+        "statuses": ["Testing", "QA", "Ready for Testing"]
+      },
+      {
+        "name": "Done",
+        "wipLimit": null,
+        "statuses": ["Done", "Resolved", "Closed"]
+      }
+    ],
+    "swimlanes": [
+      {
+        "name": "AI Generation",
+        "query": "labels = 'ai-generation' OR area = 'ui-generation'"
+      },
+      {
+        "name": "Web3/Contracts",
+        "query": "labels = 'web3' OR area IN ('contracts', 'payments', 'nft-minting')"
+      },
+      {
+        "name": "Brand Factory",
+        "query": "area = 'brand-factory' OR labels = 'branding'"
+      },
+      {
+        "name": "DevOps",
+        "query": "area = 'ci-cd' OR labels = 'devops'"
+      },
+      {
+        "name": "Bugs",
+        "query": "type = Bug"
+      },
+      {
+        "name": "Everything Else",
+        "query": null
+      }
+    ]
+  },
+  "issueTypes": [
+    {
+      "name": "Story",
+      "description": "User story or feature request",
+      "icon": "story"
+    },
+    {
+      "name": "Bug",
+      "description": "Software bug or defect",
+      "icon": "bug"
+    },
+    {
+      "name": "Task",
+      "description": "General task",
+      "icon": "task"
+    },
+    {
+      "name": "Epic",
+      "description": "Large body of work",
+      "icon": "epic"
+    },
+    {
+      "name": "Spike",
+      "description": "Research or investigation",
+      "icon": "task"
+    }
+  ],
+  "customFields": [
+    {
+      "name": "Effort",
+      "type": "select",
+      "description": "Estimated effort/complexity",
+      "options": ["XS", "S", "M", "L", "XL", "XXL"],
+      "default": "M"
+    },
+    {
+      "name": "Area",
+      "type": "select",
+      "description": "Area of the codebase",
+      "options": [
+        "UI Generation",
+        "Color System",
+        "Brand Factory",
+        "Design Tokens",
+        "Components",
+        "Templates",
+        "API",
+        "Contracts",
+        "Payments",
+        "NFT Minting",
+        "CI/CD",
+        "Testing",
+        "Docker",
+        "Monitoring"
+      ]
+    },
+    {
+      "name": "AI Model",
+      "type": "select",
+      "description": "AI model used (if applicable)",
+      "options": ["Claude Sonnet", "Claude Opus", "GPT-4", "GPT-3.5", "Other"]
+    },
+    {
+      "name": "Contract Type",
+      "type": "select",
+      "description": "Smart contract type (if applicable)",
+      "options": ["Payment (x402)", "NFT Minting", "Governance", "Other"]
+    },
+    {
+      "name": "WCAG Level",
+      "type": "select",
+      "description": "WCAG compliance level required",
+      "options": ["AA", "AAA", "N/A"]
+    },
+    {
+      "name": "Generation Time",
+      "type": "number",
+      "description": "AI generation time in seconds",
+      "unit": "seconds"
+    },
+    {
+      "name": "Gas Cost",
+      "type": "number",
+      "description": "Smart contract gas cost",
+      "unit": "gwei"
+    }
+  ],
+  "priorities": [
+    {
+      "name": "Highest",
+      "description": "Critical - Production down, security breach",
+      "color": "#d04437",
+      "icon": "highest"
+    },
+    {
+      "name": "High",
+      "description": "Blocking work, major bugs",
+      "color": "#f15c75",
+      "icon": "high"
+    },
+    {
+      "name": "Medium",
+      "description": "Normal priority",
+      "color": "#f79232",
+      "icon": "medium"
+    },
+    {
+      "name": "Low",
+      "description": "Nice to have",
+      "color": "#59afe1",
+      "icon": "low"
+    },
+    {
+      "name": "Lowest",
+      "description": "Future consideration",
+      "color": "#999999",
+      "icon": "lowest"
+    }
+  ],
+  "components": [
+    {
+      "name": "AI Generation Engine",
+      "description": "Prompt-to-component system",
+      "lead": null
+    },
+    {
+      "name": "Color System",
+      "description": "Color palette generation and theory",
+      "lead": null
+    },
+    {
+      "name": "Brand Factory",
+      "description": "Branding questionnaire and generation",
+      "lead": null
+    },
+    {
+      "name": "Design Tokens",
+      "description": "CSS custom properties and theming",
+      "lead": null
+    },
+    {
+      "name": "Component Library",
+      "description": "React component library",
+      "lead": null
+    },
+    {
+      "name": "Smart Contracts",
+      "description": "Solidity contracts (x402, NFT)",
+      "lead": null
+    },
+    {
+      "name": "Frontend",
+      "description": "Next.js frontend application",
+      "lead": null
+    },
+    {
+      "name": "API",
+      "description": "Backend API endpoints",
+      "lead": null
+    },
+    {
+      "name": "DevOps",
+      "description": "CI/CD and infrastructure",
+      "lead": null
+    },
+    {
+      "name": "Documentation",
+      "description": "Project documentation",
+      "lead": null
+    }
+  ],
+  "labels": [
+    "ai-generation",
+    "web3",
+    "branding",
+    "design-system",
+    "accessibility",
+    "automation",
+    "security",
+    "performance",
+    "good-first-issue",
+    "help-wanted",
+    "breaking-change",
+    "needs-tests",
+    "needs-docs",
+    "needs-a11y-audit",
+    "contract-audit",
+    "gas-optimization",
+    "testnet",
+    "mainnet",
+    "wcag-aa",
+    "wcag-aaa",
+    "prompt-engineering",
+    "generation-quality",
+    "token-optimization"
+  ],
+  "filters": [
+    {
+      "name": "My Work",
+      "query": "assignee = currentUser() AND status != Done",
+      "description": "Issues assigned to me that aren't done"
+    },
+    {
+      "name": "Blocked Items",
+      "query": "status = Blocked ORDER BY priority DESC",
+      "description": "All blocked issues by priority"
+    },
+    {
+      "name": "High Priority",
+      "query": "priority IN (Highest, High) AND status != Done ORDER BY priority DESC",
+      "description": "Critical and high priority issues"
+    },
+    {
+      "name": "AI Generation Work",
+      "query": "labels = 'ai-generation' OR area = 'UI Generation' ORDER BY priority DESC",
+      "description": "All AI generation related work"
+    },
+    {
+      "name": "Web3 Work",
+      "query": "labels = 'web3' OR area IN ('Contracts', 'Payments', 'NFT Minting') ORDER BY priority DESC",
+      "description": "All Web3 and smart contract work"
+    },
+    {
+      "name": "Ready for Review",
+      "query": "status = Review ORDER BY created ASC",
+      "description": "PRs waiting for review (oldest first)"
+    },
+    {
+      "name": "Needs Tests",
+      "query": "labels = 'needs-tests' AND status != Done",
+      "description": "Issues missing test coverage"
+    },
+    {
+      "name": "This Week",
+      "query": "created >= startOfWeek() OR updated >= startOfWeek() ORDER BY updated DESC",
+      "description": "Activity from this week"
+    },
+    {
+      "name": "Overdue",
+      "query": "due < now() AND status != Done ORDER BY due ASC",
+      "description": "Overdue issues"
+    },
+    {
+      "name": "Unassigned",
+      "query": "assignee IS EMPTY AND status NOT IN (Backlog, Done) ORDER BY priority DESC",
+      "description": "Issues needing assignment"
+    },
+    {
+      "name": "Good First Issues",
+      "query": "labels = 'good-first-issue' AND status != Done ORDER BY created DESC",
+      "description": "Good for new contributors"
+    },
+    {
+      "name": "Security Issues",
+      "query": "labels = 'security' OR labels = 'contract-audit' ORDER BY priority DESC",
+      "description": "All security-related issues"
+    }
+  ],
+  "automation": [
+    {
+      "name": "Auto-assign based on area",
+      "trigger": "Issue created",
+      "conditions": [
+        {
+          "field": "Area",
+          "operator": "equals",
+          "value": "Contracts"
+        }
+      ],
+      "actions": [
+        {
+          "type": "assign",
+          "assignee": "component-lead"
+        }
+      ]
+    },
+    {
+      "name": "Stale issue reminder",
+      "trigger": "Scheduled daily",
+      "conditions": [
+        {
+          "field": "Status",
+          "operator": "equals",
+          "value": "In Progress"
+        },
+        {
+          "field": "Updated",
+          "operator": "older than",
+          "value": "7 days"
+        }
+      ],
+      "actions": [
+        {
+          "type": "comment",
+          "message": "⏰ This issue hasn't been updated in 7 days. Is it blocked?"
+        }
+      ]
+    },
+    {
+      "name": "Blocked issue alert",
+      "trigger": "Issue transitioned",
+      "conditions": [
+        {
+          "field": "Status",
+          "operator": "changed to",
+          "value": "Blocked"
+        }
+      ],
+      "actions": [
+        {
+          "type": "slack-notification",
+          "channel": "#dev-team",
+          "message": "Issue {{key}} is now blocked: {{summary}}"
+        }
+      ]
+    },
+    {
+      "name": "High priority alert",
+      "trigger": "Issue updated",
+      "conditions": [
+        {
+          "field": "Priority",
+          "operator": "changed to",
+          "value": "Highest"
+        }
+      ],
+      "actions": [
+        {
+          "type": "slack-notification",
+          "channel": "#alerts",
+          "message": "🚨 Critical priority: {{key}} - {{summary}}"
+        }
+      ]
+    },
+    {
+      "name": "Label sync on status change",
+      "trigger": "Issue transitioned",
+      "conditions": [],
+      "actions": [
+        {
+          "type": "add-label",
+          "label": "status:{{status}}"
+        }
+      ]
+    }
+  ],
+  "workflows": {
+    "default": {
+      "name": "MachLabs Kanban Workflow",
+      "statuses": [
+        {
+          "name": "Backlog",
+          "category": "To Do"
+        },
+        {
+          "name": "To Do",
+          "category": "To Do"
+        },
+        {
+          "name": "In Progress",
+          "category": "In Progress"
+        },
+        {
+          "name": "Blocked",
+          "category": "In Progress"
+        },
+        {
+          "name": "Review",
+          "category": "In Progress"
+        },
+        {
+          "name": "Testing",
+          "category": "In Progress"
+        },
+        {
+          "name": "Done",
+          "category": "Done"
+        }
+      ],
+      "transitions": [
+        {
+          "from": "Backlog",
+          "to": ["To Do"]
+        },
+        {
+          "from": "To Do",
+          "to": ["In Progress", "Backlog"]
+        },
+        {
+          "from": "In Progress",
+          "to": ["Blocked", "Review", "To Do"]
+        },
+        {
+          "from": "Blocked",
+          "to": ["In Progress", "To Do"]
+        },
+        {
+          "from": "Review",
+          "to": ["In Progress", "Testing"]
+        },
+        {
+          "from": "Testing",
+          "to": ["In Progress", "Done"]
+        },
+        {
+          "from": "Done",
+          "to": ["In Progress"]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,295 @@
+# MACHUPS - Monad Blitz #18 Specific Labels
+# Use with: gh label create/sync
+# Merge with .github/labels.yml for complete label set
+
+# ============================================
+# MACHUPS PRIORITY LABELS (P0-P3)
+# ============================================
+
+- name: "P0-critical"
+  color: "b60205"
+  description: "🔥 Must complete, blocks everything - MACHUPS Priority 0"
+
+- name: "P1-high"
+  color: "d93f0b"
+  description: "⚡ Core MVP features - MACHUPS Priority 1"
+
+- name: "P2-medium"
+  color: "fbca04"
+  description: "📋 Important but not blocking - MACHUPS Priority 2"
+
+- name: "P3-low"
+  color: "0e8a16"
+  description: "✨ Nice to have - MACHUPS Priority 3"
+
+# ============================================
+# MACHUPS PHASE LABELS (Timeline-Based)
+# ============================================
+
+- name: "phase-1-foundation"
+  color: "8b5cf6"
+  description: "🚀 Hours 0-3: Environment setup, Claude API, basic logo gen"
+
+- name: "phase-2-core"
+  color: "3b82f6"
+  description: "⚙️ Hours 3-7: All generators, component export, complete brand"
+
+- name: "phase-3-integration"
+  color: "14b8a6"
+  description: "🔗 Hours 7-10: Deployment, x402 integration, NFT minting"
+
+- name: "phase-4-finalization"
+  color: "ec4899"
+  description: "🎨 Hours 10-11: Polish, testing, demo preparation"
+
+# ============================================
+# MACHUPS COMPONENT LABELS
+# ============================================
+
+- name: "component-logo-gen"
+  color: "6b7280"
+  description: "🎨 Logo generator (HTML/CSS + AI prompts)"
+
+- name: "component-tokens"
+  color: "6b7280"
+  description: "🎨 Design token generation (CSS custom properties)"
+
+- name: "component-components"
+  color: "6b7280"
+  description: "⚛️ React component generation and export"
+
+- name: "component-guidelines"
+  color: "6b7280"
+  description: "📚 Brand documentation and guidelines generation"
+
+- name: "component-premium"
+  color: "6b7280"
+  description: "💎 Premium features (x402 gated)"
+
+- name: "component-nft"
+  color: "6b7280"
+  description: "🖼️ NFT minting and reward system"
+
+# ============================================
+# MACHUPS MILESTONE LABELS
+# ============================================
+
+- name: "milestone-checkpoint-1"
+  color: "7c3aed"
+  description: "🎯 Checkpoint 1: Foundation Complete (H3:00)"
+
+- name: "milestone-checkpoint-2"
+  color: "2563eb"
+  description: "🎯 Checkpoint 2: Core Features Complete (H7:00)"
+
+- name: "milestone-checkpoint-3"
+  color: "0891b2"
+  description: "🎯 Checkpoint 3: Integration Complete (H10:00)"
+
+- name: "milestone-final-submission"
+  color: "db2777"
+  description: "🎯 Final Submission (H11:00)"
+
+# ============================================
+# MACHUPS DEMO LABELS
+# ============================================
+
+- name: "demo-must-show"
+  color: "ffd700"
+  description: "⭐ Critical for 5-minute demo"
+
+- name: "demo-nice-to-show"
+  color: "ffb700"
+  description: "✨ Show if time permits in demo"
+
+- name: "demo-backend-only"
+  color: "9ca3af"
+  description: "⚙️ Not visible in demo (infrastructure)"
+
+# ============================================
+# MACHUPS EFFORT LABELS (Rapid Development)
+# ============================================
+
+- name: "effort-xs"
+  color: "c2e0c6"
+  description: "⏱️ <30 minutes - Quick win"
+
+- name: "effort-s"
+  color: "7fdbca"
+  description: "⏱️ 30min-1h - Small task"
+
+- name: "effort-m"
+  color: "0e8a16"
+  description: "⏱️ 1-2 hours - Medium task"
+
+- name: "effort-l"
+  color: "006b75"
+  description: "⏱️ 2-4 hours - Large task"
+
+- name: "effort-xl"
+  color: "0052cc"
+  description: "⏱️ 4+ hours - Extra large (break down if possible)"
+
+# ============================================
+# MACHUPS BLOCKER LABELS
+# ============================================
+
+- name: "blocker-api-limit"
+  color: "d93f0b"
+  description: "🚫 Claude API rate limit hit"
+
+- name: "blocker-external-dep"
+  color: "d93f0b"
+  description: "🚫 Waiting on external dependency"
+
+- name: "blocker-tech-issue"
+  color: "d93f0b"
+  description: "🚫 Technical blocker (bug, compatibility)"
+
+- name: "blocker-decision"
+  color: "fbca04"
+  description: "🤔 Needs design/architecture decision"
+
+- name: "blocker-testnet"
+  color: "f59e0b"
+  description: "🚫 Monad testnet unavailable"
+
+# ============================================
+# MACHUPS QUALITY LABELS
+# ============================================
+
+- name: "quality-ai-output"
+  color: "8b5cf6"
+  description: "🤖 AI generation quality validation needed"
+
+- name: "quality-gas-optimization"
+  color: "ff9800"
+  description: "⛽ Smart contract gas optimization needed"
+
+- name: "quality-wcag-check"
+  color: "6366f1"
+  description: "♿ WCAG AA/AAA accessibility check needed"
+
+- name: "quality-brand-consistency"
+  color: "ec4899"
+  description: "🎨 Brand consistency validation needed"
+
+# ============================================
+# MACHUPS EVENT-SPECIFIC LABELS
+# ============================================
+
+- name: "event-monad-blitz-18"
+  color: "7c3aed"
+  description: "🏆 Monad Blitz #18 event work"
+
+- name: "event-demo-script"
+  color: "db2777"
+  description: "📜 Part of live demo script"
+
+- name: "event-judging-criteria"
+  color: "ffd700"
+  description: "⭐ Addresses event judging criteria"
+
+# ============================================
+# MACHUPS INTEGRATION LABELS
+# ============================================
+
+- name: "integration-claude-api"
+  color: "8b5cf6"
+  description: "🤖 Claude API integration work"
+
+- name: "integration-x402"
+  color: "f59e0b"
+  description: "💰 x402 metered payments integration"
+
+- name: "integration-thirdweb"
+  color: "a78bfa"
+  description: "🔗 Thirdweb SDK integration"
+
+- name: "integration-monad"
+  color: "7c3aed"
+  description: "⛓️ Monad blockchain integration"
+
+- name: "integration-cloudflare"
+  color: "f97316"
+  description: "☁️ Cloudflare Pages deployment"
+
+# ============================================
+# MACHUPS RAPID DEVELOPMENT LABELS
+# ============================================
+
+- name: "rapid-template-reuse"
+  color: "10b981"
+  description: "♻️ Reusing existing templates/code"
+
+- name: "rapid-ai-assisted"
+  color: "8b5cf6"
+  description: "🤖 AI-assisted development (Claude Code)"
+
+- name: "rapid-copy-paste"
+  color: "6b7280"
+  description: "📋 Copy/paste from docs/examples (speed over perfection)"
+
+- name: "rapid-minimal-viable"
+  color: "fbca04"
+  description: "⚡ Minimal viable implementation (improve later)"
+
+# ============================================
+# MACHUPS BRAND LABELS (Multi-Brand Support)
+# ============================================
+
+- name: "brand-machups"
+  color: "00c9ff"
+  description: "🎨 MACHUPS brand (neon blue, cyber aesthetic)"
+
+- name: "brand-machlabs"
+  color: "000000"
+  description: "🎨 MachLabs parent brand (black, charcoal)"
+
+- name: "brand-client-demo"
+  color: "ec4899"
+  description: "🎨 Client/demo brand examples"
+
+- name: "brand-consistency"
+  color: "7c3aed"
+  description: "🎨 Cross-brand consistency validation"
+
+# ============================================
+# MACHUPS DEPLOYMENT LABELS
+# ============================================
+
+- name: "deploy-testnet"
+  color: "fbca04"
+  description: "🚀 Deploy to Monad testnet"
+
+- name: "deploy-mainnet"
+  color: "10b981"
+  description: "🚀 Deploy to Monad mainnet (if time permits)"
+
+- name: "deploy-cloudflare"
+  color: "f97316"
+  description: "🚀 Deploy to Cloudflare Pages"
+
+- name: "deploy-demo-environment"
+  color: "3b82f6"
+  description: "🚀 Deploy to demo/staging environment"
+
+# ============================================
+# MACHUPS DOCUMENTATION LABELS
+# ============================================
+
+- name: "docs-api"
+  color: "0075ca"
+  description: "📚 API documentation"
+
+- name: "docs-setup"
+  color: "0075ca"
+  description: "📚 Setup and installation docs"
+
+- name: "docs-demo-script"
+  color: "0075ca"
+  description: "📚 Demo script and presentation"
+
+- name: "docs-architecture"
+  color: "0075ca"
+  description: "📚 Architecture decision records"

@@ -1,0 +1,21 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Discussion Forum
+    url: https://github.com/machlabs/machlab/discussions
+    about: Ask questions and discuss ideas with the community
+
+  - name: 📚 Documentation
+    url: https://github.com/machlabs/machlab/blob/main/README.md
+    about: Read the project documentation
+
+  - name: 🏷️ Tag Usage Guide
+    url: https://github.com/machlabs/machlab/blob/main/.github/TAG_USAGE_GUIDE.md
+    about: Learn how to use labels effectively
+
+  - name: 🔒 Security Policy
+    url: mailto:security@machlabs.com
+    about: Report critical security vulnerabilities privately
+
+  - name: 🎨 Brand Factory
+    url: https://github.com/machlabs/machlab/blob/main/CLAUDE_BRANDING_GUIDE.md
+    about: Learn about the Brand Factory system

@@ -1,0 +1,104 @@
+name: Feature Request
+description: Suggest a new feature for MachLabs
+title: "[Feature] "
+labels: ["type: feature", "priority: medium", "status: needs-design"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to suggest a new feature! Please fill out the sections below.
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Feature Area
+      description: Which area of the project does this feature relate to?
+      options:
+        - UI Generation (Prompt-to-Component)
+        - Color System (Palette Generation)
+        - Brand Factory (Branding System)
+        - Design Tokens (CSS Variables)
+        - Components (React Library)
+        - Smart Contracts (Web3)
+        - x402 Payments
+        - NFT Minting
+        - API Backend
+        - CI/CD & DevOps
+        - Testing
+        - Documentation
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: What problem does this feature solve?
+      placeholder: As a [user type], I struggle with [problem] because [reason]...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe how you'd like this feature to work
+      placeholder: The system should...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: What other solutions have you considered?
+      placeholder: I also thought about...
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Estimated Complexity
+      description: How complex do you think this feature is?
+      options:
+        - XS (< 2 hours)
+        - S (2-4 hours)
+        - M (1-2 days)
+        - L (3-5 days)
+        - XL (1-2 weeks)
+        - XXL (Multi-week)
+        - Unknown
+
+  - type: checkboxes
+    id: special-considerations
+    attributes:
+      label: Special Considerations
+      description: Check all that apply
+      options:
+        - label: Requires AI/LLM integration
+        - label: Involves Web3/smart contracts
+        - label: Must meet WCAG AA accessibility
+        - label: Needs security audit
+        - label: Breaking change
+        - label: Requires design system updates
+        - label: Affects performance
+        - label: Needs user testing
+
+  - type: textarea
+    id: acceptance-criteria
+    attributes:
+      label: Acceptance Criteria
+      description: What must be true for this feature to be considered complete?
+      placeholder: |
+        - [ ] User can...
+        - [ ] System validates...
+        - [ ] Tests cover...
+        - [ ] Documentation includes...
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context, screenshots, or mockups

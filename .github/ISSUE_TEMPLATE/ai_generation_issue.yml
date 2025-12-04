@@ -1,0 +1,153 @@
+name: AI Generation Issue
+description: Report an issue with AI-powered component generation
+title: "[AI] "
+labels: ["type: ai-generation", "area: ui-generation", "ai: generation-quality"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Report issues with AI-generated components, prompts, or generation quality.
+
+  - type: dropdown
+    id: issue-type
+    attributes:
+      label: Issue Type
+      description: What kind of AI generation issue is this?
+      options:
+        - Poor Quality Output
+        - Invalid/Broken Code Generated
+        - Incorrect Design Token Usage
+        - Accessibility Violations (WCAG)
+        - Performance Issues (Slow Generation)
+        - Inconsistent Results
+        - Prompt Not Working
+        - Token Usage Too High
+    validations:
+      required: true
+
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt Used
+      description: What prompt did you use?
+      placeholder: |
+        Create a primary button with...
+      render: text
+    validations:
+      required: true
+
+  - type: textarea
+    id: brand-context
+    attributes:
+      label: Brand Context
+      description: What brand parameters were provided?
+      placeholder: |
+        ```json
+        {
+          "primaryColor": "#3B82F6",
+          "fontFamily": "Inter",
+          ...
+        }
+        ```
+      render: json
+
+  - type: textarea
+    id: generated-output
+    attributes:
+      label: Generated Output
+      description: What code was generated?
+      placeholder: |
+        ```tsx
+        // Generated component code
+        ```
+      render: tsx
+
+  - type: textarea
+    id: expected-output
+    attributes:
+      label: Expected Output
+      description: What should have been generated instead?
+      placeholder: |
+        The component should have...
+
+  - type: textarea
+    id: issues-found
+    attributes:
+      label: Specific Issues
+      description: What's wrong with the generated output?
+      placeholder: |
+        - Missing aria-label attribute
+        - Hard-coded color instead of design token
+        - Invalid TypeScript syntax
+        - Not responsive
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: quality-checks
+    attributes:
+      label: Quality Violations
+      description: Check all that apply to the generated output
+      options:
+        - label: Invalid TypeScript/React syntax
+        - label: Hard-coded values (not using design tokens)
+        - label: Missing accessibility attributes
+        - label: Color contrast too low (WCAG)
+        - label: Not responsive (missing breakpoints)
+        - label: Poor performance (unnecessary re-renders)
+        - label: Security issues (XSS, injection)
+        - label: Inconsistent with design system
+
+  - type: input
+    id: generation-time
+    attributes:
+      label: Generation Time
+      description: How long did generation take?
+      placeholder: e.g., 8.5 seconds
+
+  - type: input
+    id: token-count
+    attributes:
+      label: Token Count (if known)
+      description: How many tokens were used?
+      placeholder: e.g., 2500 tokens
+
+  - type: textarea
+    id: reproduction-rate
+    attributes:
+      label: Reproduction Rate
+      description: How often does this happen?
+      placeholder: |
+        - Tested 10 times
+        - Failed 7 times (70% failure rate)
+        - Seems to happen more with complex prompts
+
+  - type: dropdown
+    id: model
+    attributes:
+      label: AI Model Used
+      description: Which model generated this output?
+      options:
+        - Claude Sonnet
+        - Claude Opus
+        - GPT-4
+        - GPT-3.5
+        - Other
+        - Unknown
+
+  - type: textarea
+    id: suggested-fix
+    attributes:
+      label: Suggested Fix
+      description: How could the prompt or generation be improved?
+      placeholder: |
+        The system prompt should emphasize...
+        Or: Add a post-processing step to...
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other relevant information

@@ -1,0 +1,38 @@
+# robots.txt for MACHUPS
+# https://app.machups.com
+
+User-agent: *
+Allow: /
+Allow: /generate
+Allow: /gallery
+Allow: /docs
+
+Disallow: /api/
+Disallow: /admin/
+Disallow: /_next/
+Disallow: /preview/*
+
+# Sitemaps
+Sitemap: https://app.machups.com/sitemap.xml
+
+# Crawl delay (be nice to our servers)
+Crawl-delay: 1
+
+# Specific bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ChatGPT-User
+Disallow: /
+
+User-agent: CCBot
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /

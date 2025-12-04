@@ -1,0 +1,223 @@
+# Auto-labeler configuration
+# Automatically applies labels to PRs based on files changed
+
+# TYPE LABELS
+
+"type: docs":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.md'
+      - 'docs/**/*'
+      - '.github/TAG_USAGE_GUIDE.md'
+
+"type: test":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '**/*.test.ts'
+      - '**/*.test.tsx'
+      - '**/*.spec.ts'
+      - '**/*.spec.tsx'
+      - 'tests/**/*'
+      - 'e2e/**/*'
+
+"type: devops":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/workflows/**/*'
+      - '.github/scripts/**/*'
+      - 'Dockerfile'
+      - 'docker-compose.yml'
+      - '.dockerignore'
+
+"type: dependency":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'package.json'
+      - 'pnpm-lock.yaml'
+      - 'package-lock.json'
+
+# AREA LABELS
+
+"area: ui-generation":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/lib/ai-generator/**/*'
+      - 'src/app/generate/**/*'
+      - 'src/components/ai/**/*'
+
+"area: color-system":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/lib/color/**/*'
+      - 'src/utils/color-*'
+      - 'COLOR_THEORY.md'
+
+"area: brand-factory":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'brand-questionnaire.sh'
+      - 'src/app/brand/**/*'
+      - 'templates/BRAND_TEMPLATE.md'
+      - 'CLAUDE_BRANDING_GUIDE.md'
+
+"area: design-tokens":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/styles/tokens/**/*'
+      - 'src/lib/tokens/**/*'
+      - 'tailwind.config.*'
+
+"area: components":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/components/**/*'
+      - 'templates/REACT_COMPONENTS_TEMPLATE.md'
+
+"area: templates":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'templates/**/*'
+
+"area: contracts":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'contracts/**/*'
+      - 'src/contracts/**/*'
+      - 'test/contracts/**/*'
+      - 'foundry.toml'
+
+"area: payments":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/lib/x402/**/*'
+      - 'src/app/api/payments/**/*'
+
+"area: nft-minting":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/lib/nft/**/*'
+      - 'src/app/api/nft/**/*'
+      - 'contracts/NFT*'
+
+"area: api":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/app/api/**/*'
+      - 'src/lib/api/**/*'
+
+"area: ci-cd":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/workflows/**/*'
+      - '.github/scripts/**/*'
+
+"area: testing":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'vitest.config.*'
+      - 'playwright.config.*'
+      - 'tests/**/*'
+      - 'e2e/**/*'
+
+"area: docker":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'Dockerfile*'
+      - 'docker-compose*.yml'
+      - '.dockerignore'
+
+"area: monitoring":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/lib/monitoring/**/*'
+      - 'instrumentation.ts'
+      - 'sentry*.config.*'
+
+# DESIGN SYSTEM
+
+"type: design-system":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/styles/**/*'
+      - 'src/components/ui/**/*'
+      - 'postcss.config.*'
+
+# ACCESSIBILITY
+
+"type: accessibility":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/lib/accessibility/**/*'
+      - 'src/utils/wcag/**/*'
+      - '.pa11yci.json'
+
+# AUTOMATION
+
+"type: automation":
+  - changed-files:
+    - any-glob-to-any-file:
+      - '.github/scripts/**/*'
+      - 'scripts/**/*'
+      - '*.sh'
+
+# BUILD CONFIGURATION
+
+"area: build":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'next.config.*'
+      - 'tsconfig.json'
+      - 'vite.config.*'
+      - 'webpack.config.*'
+
+# COMPLIANCE (based on file patterns)
+
+"compliance: wcag-aa":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/components/**/*'
+      - 'src/app/**/*'
+
+# WEB3 INDICATORS
+
+"type: web3":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'contracts/**/*'
+      - 'src/lib/web3/**/*'
+      - 'src/lib/wallet/**/*'
+      - 'hardhat.config.*'
+      - 'foundry.toml'
+
+# AI/LLM INDICATORS
+
+"type: ai-generation":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/lib/ai/**/*'
+      - 'src/lib/llm/**/*'
+      - 'src/lib/prompts/**/*'
+
+# QUALITY REQUIREMENTS
+
+"quality: needs-tests":
+  - changed-files:
+    - all-globs-to-all-files:
+      - 'src/**/*.{ts,tsx}'
+      - '!**/*.test.{ts,tsx}'
+      - '!**/*.spec.{ts,tsx}'
+
+"quality: needs-docs":
+  - changed-files:
+    - all-globs-to-all-files:
+      - 'src/lib/**/*'
+      - '!**/*.md'
+
+# BREAKING CHANGES (based on specific files)
+
+"workflow: breaking-change":
+  - changed-files:
+    - any-glob-to-any-file:
+      - 'src/types/**/*'
+      - 'src/lib/api/types.ts'
+      - 'contracts/interfaces/**/*'

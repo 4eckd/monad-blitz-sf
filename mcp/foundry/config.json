@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "foundry": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@foundry/mcp-server"
+      ],
+      "env": {
+        "FOUNDRY_PROFILE": "${FOUNDRY_PROFILE:-default}",
+        "FOUNDRY_ROOT": "${FOUNDRY_ROOT:-.}",
+        "ETH_RPC_URL": "${ETH_RPC_URL}",
+        "PRIVATE_KEY": "${PRIVATE_KEY}"
+      }
+    }
+  }
+}
