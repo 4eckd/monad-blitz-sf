@@ -36,6 +36,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Component abstraction layer design
   - Design token converter architecture
 
+- **Auto-Deploy System** 🚀 NEW:
+  - Automated deployment to machups.com subdomains
+  - Subdomain availability checking with AI-powered suggestions
+  - Cloudflare Pages integration for instant deployments
+  - Custom DNS and SSL configuration
+  - Deployment status tracking with real-time progress updates
+  - Screenshot capture system using Puppeteer
+  - Commemorative NFT minting on Monad blockchain
+  - NFT certificate with embedded brand screenshot
+  - IPFS metadata storage for NFTs
+  - Deployment metrics and analytics
+
 ### Planning (Phase 1-4)
 - ASCII wireframe generator with predefined templates
 - Logo generation with AI
@@ -46,7 +58,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Mermaid user flow diagrams
 - A/B testing variant generator
 - Penpot file creation
-- NFT minting on Monad
 
 ---
 

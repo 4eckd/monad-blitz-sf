@@ -1,0 +1,21 @@
+# NFT Metadata Template
+# Uses deterministic rarity seed for testnet→mainnet consistency
+
+metadata:
+  rarity_tier: {rarity_tier}
+  color_theme: {selected_color_theme}
+  rarity_seed: {rarity_seed}
+  event: "Monad Blitz #18 — 3-Minute Brand Hack"
+  artist: "FUSED GAMING"
+  edition: {n}
+  chain: {chain}
+  genesis_edition: {is_genesis}
+
+# Rarity Seed Generation:
+# rarity_seed = keccak256(brandName:walletAddress:timestamp:blockNumber)
+#
+# This ensures:
+# - Same seed on testnet and mainnet
+# - Provable rarity (on-chain verifiable)
+# - No re-rolls or manipulation
+# - Fair distribution based on generation time

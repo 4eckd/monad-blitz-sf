@@ -1,0 +1,23 @@
+# Color Theme Application Instructions
+# This file defines how to apply the rarity-determined color theme
+
+Apply the selected {color_theme} uniformly to:
+- headline text glow
+- ASCII skull neon edges
+- command-line glow intensity
+- border light
+- waveform accents
+- sponsor logo tint
+
+IMPORTANT CONSTRAINTS:
+- Do NOT change structure — only color palette and glow modulation
+- The {color_theme} is determined by {rarity_seed}, NOT randomly
+- Same seed = same color theme = identical visual output
+- This ensures testnet NFT = mainnet NFT (same appearance)
+
+Color Theme Intensity Levels by Rarity:
+- COMMON: Moderate glow (60% intensity)
+- UNCOMMON: Enhanced glow (70% intensity)
+- RARE: Strong glow (80% intensity)
+- ULTRA RARE: Intense glow (90% intensity)
+- LEGENDARY: Maximum glow (100% intensity + chromatic aberration)

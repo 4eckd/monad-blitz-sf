@@ -1,0 +1,84 @@
+Generate a cyberpunk hacker-terminal NFT card in ultra crisp 8K resolution. 
+Deep black glossy background, futuristic Linux terminal window styling, neon vaporwave aesthetic, CRT scanlines, luminous reflections, glowing chrome accents.
+
+Insert the exact text layout:
+
+FUSED GAMING
+HACKED MY BRAND
+AT MONAD BLITZ #18 SF
+IN UNDER 3 MINS
+
+Add a large, glowing, perfectly aligned ASCII skull made of neon ASCII symbols.
+
+Below it, include:
+> haccked
+> hacked
+# sudo x402 deploy --force
+monad@fused:~$ uptime 00:02:47
+brand-generation-complete ✓
+MONAD OS v0.402 — GPU accelerated branding kernel loaded
+
+Bottom area: subtle monochrome neon logos:
+monad.xyz • coinbase • F.inc • thirdweb
+
+Apply rarity-based terminal glow color theme:
+
+COMMON (60%):
+  - Cyber Mint Green / Circuit Cyan / Terminal Lime:
+    - Primary:   #00FFA3 (Cyber Mint)
+    - Secondary: #00FFCC (Electric Aqua)
+    - Accent:    #7FFFD4 (Digital Seafoam)
+    - Shadow:    #004D3D (Deep Circuit)
+    - Glow:      #B3FFE6 (Mint Haze)
+UNCOMMON (20%):
+  - Neon Magenta / Ultraviolet Blue / Acid x Magenta Dual-Tone:
+    - Primary:   #FF00FF (Pure Magenta)
+    - Secondary: #FF0080 (Hot Pink Pulse)
+    - Accent:    #FF66FF (Soft Neon)
+    - Shadow:    #660066 (Deep Violet)
+    - Glow:      #FFCCFF (Magenta Bloom)
+RARE (10%):
+  - Prismatic RGB Sweep / Tri-Chrome Pulse / Vaporwave Sunset Neon:
+    - Primary:   #FF0000 (Pure Red)
+    - Secondary: #00FF00 (Pure Green)
+    - Tertiary:  #0000FF (Pure Blue)
+    - Accent:    #FFFF00 (Yellow Blend)
+    - Shadow:    #330033 (Void Purple)
+    - Glow:      #FFFFFF (White Prismatic)
+ULTRA RARE (5%):
+  - Chromatic Glitch Aurora / Spectral Flux / Iridescent Opal:
+    - Primary:   #00FFFF (Cyan Glitch)
+    - Secondary: #FF00AA (Magenta Corruption)
+    - Tertiary:  #AAFF00 (Lime Artifact)
+    - Accent:    #FF6600 (Orange Distortion)
+    - Shadow:    #0D0D1A (Digital Void)
+    - Glow:      #EEFFFF (Aurora Shimmer)
+LEGENDARY (5%):
+  - Blacklight Void Fire / Forbidden Spectrum / Entropy Core Radiance:
+    - Primary:   #9D00FF (Deep Ultraviolet)
+    - Secondary: #FF0099 (Forbidden Fuchsia)
+    - Tertiary:  #00FFFF (Plasma Cyan)
+    - Accent:    #FF6600 (Entropy Orange)
+    - Shadow:    #000000 (True Void)
+    - Glow:      #FFFFFF (Blinding Core)
+    - Highlight: #FFD700 (Radiant Gold Edge)
+
+IMPORTANT: Use the deterministic {rarity_seed} to select the color theme.
+DO NOT randomly generate - the rarity tier and color theme MUST be derived from the provided seed.
+
+Seed-to-Rarity Mapping:
+- Extract last 2 bytes of seed as value 0-99
+- 0-59 (60%) = COMMON
+- 60-79 (20%) = UNCOMMON
+- 80-89 (10%) = RARE
+- 90-94 (5%) = ULTRA RARE
+- 95-99 (5%) = LEGENDARY
+
+Apply the determined color theme uniformly to:
+all text glow, borders, ASCII skull, sponsor tints, waveform accents, interface chrome bloom.
+
+Ensure the final art remains premium, symmetrical, crisp, clean, high-end, and never chaotic.
+Futuristic, hacker-elite, collectible NFT badge.
+
+CRITICAL: The same seed MUST produce the exact same visual output every time.
+This ensures testnet and mainnet NFTs are identical.
