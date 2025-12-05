@@ -1,32 +1,47 @@
 /**
  * MACHUPS Custom Styles
  * AI-Powered Brand Generation Platform
+ *
+ * Monad Brand Colors: https://www.monad.xyz/brand-and-media-kit
+ * - Primary Purple: #6E54FF
+ * - Light Purple: #DDD7FE
+ * - Dark Navy: #0E091C
  */
 
 :root {
-  /* MACHUPS Brand Colors */
-  --ifm-color-primary: #0066FF;
-  --ifm-color-primary-dark: #005CE6;
-  --ifm-color-primary-darker: #0052CC;
-  --ifm-color-primary-darkest: #0047B3;
-  --ifm-color-primary-light: #1A75FF;
-  --ifm-color-primary-lighter: #3385FF;
-  --ifm-color-primary-lightest: #4D94FF;
-  
+  /* Monad Brand Colors - Light Theme */
+  --ifm-color-primary: #6E54FF;
+  --ifm-color-primary-dark: #5E44EF;
+  --ifm-color-primary-darker: #5440E5;
+  --ifm-color-primary-darkest: #4335CC;
+  --ifm-color-primary-light: #7E64FF;
+  --ifm-color-primary-lighter: #8E74FF;
+  --ifm-color-primary-lightest: #A896FF;
+
+  /* Monad Accents */
+  --monad-purple: #6E54FF;
+  --monad-light-purple: #DDD7FE;
+  --monad-dark-navy: #0E091C;
+  --monad-cyan: #85E6FF;
+  --monad-pink: #FF8EE4;
+
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: rgba(110, 84, 255, 0.1);
 }
 
 [data-theme='dark'] {
-  --ifm-color-primary: #4D94FF;
-  --ifm-color-primary-dark: #3385FF;
-  --ifm-color-primary-darker: #1A75FF;
-  --ifm-color-primary-darkest: #0066FF;
-  --ifm-color-primary-light: #66A3FF;
-  --ifm-color-primary-lighter: #80B3FF;
-  --ifm-color-primary-lightest: #99C2FF;
-  
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* Monad Brand Colors - Dark Theme */
+  --ifm-color-primary: #8E74FF;
+  --ifm-color-primary-dark: #7E64FF;
+  --ifm-color-primary-darker: #7058FF;
+  --ifm-color-primary-darkest: #6E54FF;
+  --ifm-color-primary-light: #9E84FF;
+  --ifm-color-primary-lighter: #AE94FF;
+  --ifm-color-primary-lightest: #BEA4FF;
+
+  --ifm-background-color: #0E091C;
+  --ifm-background-surface-color: #1a1228;
+  --docusaurus-highlighted-code-line-bg: rgba(110, 84, 255, 0.2);
 }
 
 /* Remove Docusaurus branding */
@@ -39,9 +54,19 @@
   font-size: 1.25rem;
 }
 
-/* Custom hero section */
+/* Custom hero section with Monad branding */
 .hero--primary {
-  background: linear-gradient(135deg, #0066FF 0%, #4D94FF 100%);
+  background: linear-gradient(135deg, #6E54FF 0%, #8E74FF 100%);
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  font-weight: 800;
+}
+
+.hero__subtitle {
+  font-size: 1.5rem;
+  color: var(--monad-light-purple);
 }
 
 /* Custom cards */

@@ -18,7 +18,7 @@ MACHUPS combines Claude AI with Web3 technology to generate production-ready bra
 
 ## Quick Stats
 
-- ⚡ **Generation Time**: <3 minutes (vs 2-4 weeks traditional)
+- ⚡ **Generation Time**: Under 3 minutes (vs 2-4 weeks traditional)
 - 💰 **Cost**: $10-49 (vs $5,000-50,000 traditional)
 - ⛓️ **Blockchain**: Monad Mainnet & Testnet support
 - 🎯 **Accuracy**: 95%+ WCAG AA compliance

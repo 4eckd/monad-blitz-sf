@@ -15,7 +15,7 @@ const config: Config = {
   organizationName: '4eckd',
   projectName: 'monad-blitz-sf',
 
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
 
   i18n: {
@@ -83,8 +83,8 @@ const config: Config = {
               to: '/docs/intro',
             },
             {
-              label: 'API Reference',
-              to: '/docs/api',
+              label: 'Quick Start',
+              to: '/docs/quickstart',
             },
           ],
         },

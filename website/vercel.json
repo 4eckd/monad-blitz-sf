@@ -1,0 +1,8 @@
+{
+  "buildCommand": "pnpm run build",
+  "outputDirectory": "build",
+  "installCommand": "pnpm install",
+  "framework": "docusaurus",
+  "cleanUrls": true,
+  "trailingSlash": false
+}
