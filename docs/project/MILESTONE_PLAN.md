@@ -56,7 +56,7 @@ develop → main (completed, tagged v0.2.0)
 
 **Target**: v0.3.0
 **Timeline**: Dec 4-11, 2025 (7 days)
-**Parallel Branches**: 5 feature branches
+**Parallel Branches**: 9 feature branches
 
 ### 1.1 Auto-Deploy System
 **Branch**: `feature/auto-deploy`
@@ -140,6 +140,70 @@ develop → main (completed, tagged v0.2.0)
 
 **Dependencies**: Requires `feature/auto-deploy` (for NFT minting)
 
+### 1.6 Design Site
+**Branch**: `feature/design-site`
+**Status**: 🔵 Not Started
+**Owner**: Documentation Team
+
+**Deliverables**:
+- [ ] Docusaurus site setup (design.machups.com)
+- [ ] Design token documentation
+- [ ] Component showcase
+- [ ] Usage guidelines
+- [ ] Responsive examples
+- [ ] Export format docs
+
+**Dependencies**: Requires `feature/design-tokens` (for token docs)
+
+### 1.7 Claude Usage Tracking
+**Branch**: `feature/claude-usage-tracking`
+**Status**: 🔵 Not Started
+**Owner**: AI Team
+
+**Deliverables**:
+- [ ] Model routing logic (Haiku/Sonnet/Opus)
+- [ ] Token usage tracking
+- [ ] Cost optimization engine
+- [ ] CLAUDE_USAGE.md generator
+- [ ] GitHub workflow integration
+- [ ] Usage analytics dashboard
+
+**Dependencies**: None (standalone)
+
+### 1.8 Wallet Integration ⚠️ CRITICAL
+**Branch**: `feature/wallet-integration`
+**Status**: 🔵 Planning Complete
+**Owner**: Blockchain Team
+
+**Deliverables**:
+- [ ] Wagmi v2 configuration (Monad chains)
+- [ ] Multi-wallet connectors (MetaMask, WalletConnect, Coinbase)
+- [ ] SIWE authentication system
+- [ ] Session management (HTTP-only cookies)
+- [ ] Network switcher (auto-switch to Monad)
+- [ ] NFT mint authorization (signature-based)
+- [ ] Brand ownership verification (on-chain)
+- [ ] Wallet error handling
+
+**Dependencies**: None (standalone, but REQUIRED for NFT minting and payments)
+
+### 1.9 Payment Flows ⚠️ CRITICAL
+**Branch**: `feature/payment-flows`
+**Status**: 🔵 Planning Complete
+**Owner**: Payments Team
+
+**Deliverables**:
+- [ ] Stripe integration (fiat payments)
+- [ ] Smart contract deployment (crypto payments)
+- [ ] Checkout session creation
+- [ ] Payment verification system
+- [ ] Webhook handlers (Stripe + on-chain)
+- [ ] Subscription management
+- [ ] Revenue tracking dashboard
+- [ ] Tier enforcement logic
+
+**Dependencies**: Requires `feature/wallet-integration` (MUST merge wallet first)
+
 ---
 
 ## Phase 1 Merge Strategy
@@ -160,20 +224,50 @@ Step 1: feature/auto-deploy → develop
       git merge feature/auto-deploy --no-ff
       git tag v0.3.0-alpha.1
 
-Step 2: feature/nft-rarity → develop
-  ├─ Reason: Depends on auto-deploy NFT minting
+Step 2: feature/wallet-integration → develop ⚠️ CRITICAL
+  ├─ Reason: REQUIRED for NFT minting and payments
+  ├─ Pre-merge checklist:
+  │   - [ ] Wagmi configuration works on Monad
+  │   - [ ] All 3 wallet connectors functional
+  │   - [ ] SIWE authentication tested
+  │   - [ ] Network switching to Monad works
+  │   - [ ] Session management secure (HTTP-only cookies)
+  │   - [ ] NFT authorization signatures work
+  └─ Commands:
+      git checkout develop
+      git merge feature/wallet-integration --no-ff
+      git tag v0.3.0-alpha.2
+
+Step 3: feature/nft-rarity → develop
+  ├─ Reason: Depends on wallet-integration for minting authorization
   ├─ Pre-merge checklist:
   │   - [ ] Smart contracts deployed to testnet
   │   - [ ] Rarity tests pass (all tiers)
-  │   - [ ] Integration with auto-deploy verified
+  │   - [ ] Integration with wallet signatures verified
   │   - [ ] Gas cost < 0.01 MON per mint
+  │   - [ ] Deterministic seed generation works
   └─ Commands:
       git checkout develop
       git merge feature/nft-rarity --no-ff
-      git tag v0.3.0-alpha.2
+      git tag v0.3.0-alpha.3
 
-Step 3: feature/brand-generation → develop
-  ├─ Reason: Independent, can merge anytime
+Step 4: feature/payment-flows → develop ⚠️ CRITICAL
+  ├─ Reason: Depends on wallet-integration, enables revenue
+  ├─ Pre-merge checklist:
+  │   - [ ] Stripe integration works (test mode)
+  │   - [ ] Payment smart contract deployed to testnet
+  │   - [ ] Both payment methods functional (fiat + crypto)
+  │   - [ ] Webhook handlers tested
+  │   - [ ] Payment verification works
+  │   - [ ] Tier enforcement logic correct
+  │   - [ ] Subscription management tested
+  └─ Commands:
+      git checkout develop
+      git merge feature/payment-flows --no-ff
+      git tag v0.3.0-alpha.4
+
+Step 5: feature/brand-generation → develop
+  ├─ Reason: Independent, core generation logic
   ├─ Pre-merge checklist:
   │   - [ ] Claude API integration works
   │   - [ ] Logo generation < 30s
@@ -182,9 +276,9 @@ Step 3: feature/brand-generation → develop
   └─ Commands:
       git checkout develop
       git merge feature/brand-generation --no-ff
-      git tag v0.3.0-alpha.3
+      git tag v0.3.0-alpha.5
 
-Step 4: feature/design-tokens → develop
+Step 6: feature/design-tokens → develop
   ├─ Reason: Depends on brand-generation colors/typography
   ├─ Pre-merge checklist:
   │   - [ ] W3C DTCG spec compliance
@@ -194,34 +288,65 @@ Step 4: feature/design-tokens → develop
   └─ Commands:
       git checkout develop
       git merge feature/design-tokens --no-ff
-      git tag v0.3.0-alpha.4
+      git tag v0.3.0-alpha.6
 
-Step 5: feature/preview-deployments → develop
-  ├─ Reason: Depends on auto-deploy, final feature
+Step 7: feature/claude-usage-tracking → develop
+  ├─ Reason: Independent, AI cost optimization
+  ├─ Pre-merge checklist:
+  │   - [ ] Model routing logic works
+  │   - [ ] Token tracking accurate
+  │   - [ ] CLAUDE_USAGE.md generated correctly
+  │   - [ ] GitHub workflow integration works
+  │   - [ ] Cost savings validated (>30%)
+  └─ Commands:
+      git checkout develop
+      git merge feature/claude-usage-tracking --no-ff
+      git tag v0.3.0-alpha.7
+
+Step 8: feature/design-site → develop
+  ├─ Reason: Depends on design-tokens for documentation
+  ├─ Pre-merge checklist:
+  │   - [ ] Docusaurus builds successfully
+  │   - [ ] Token documentation complete
+  │   - [ ] Component showcase works
+  │   - [ ] Deploys to design.machups.com
+  └─ Commands:
+      git checkout develop
+      git merge feature/design-site --no-ff
+      git tag v0.3.0-alpha.8
+
+Step 9: feature/preview-deployments → develop
+  ├─ Reason: Depends on auto-deploy + payments, final feature
   ├─ Pre-merge checklist:
   │   - [ ] Free tier: 1hr expiration works
-  │   - [ ] Premium tier: 24hr expiration works
+  │   - [ ] Starter tier: 24hr expiration works
+  │   - [ ] Pro tier: permanent deployment works
   │   - [ ] Sequential numbering correct
   │   - [ ] Cleanup cron job tested
+  │   - [ ] Payment tier enforcement works
   │   - [ ] No conflicts with auto-deploy
   └─ Commands:
       git checkout develop
       git merge feature/preview-deployments --no-ff
       git tag v0.3.0-beta.1
 
-Step 6: Integration Testing on develop
+Step 10: Integration Testing on develop
   ├─ Tasks:
-  │   - [ ] Full end-to-end test (brand gen → deploy → NFT)
+  │   - [ ] Full end-to-end test (brand gen → payment → deploy → NFT)
   │   - [ ] Load testing (10 concurrent users)
+  │   - [ ] Payment flow testing (both methods)
+  │   - [ ] Wallet connection testing (all browsers)
   │   - [ ] Preview expiration edge cases
   │   - [ ] Cross-feature integration
   └─ Fix any integration bugs on develop
 
-Step 7: develop → main (Production Release)
+Step 11: develop → main (Production Release)
   ├─ Pre-merge checklist:
   │   - [ ] All alpha/beta tests passed
-  │   - [ ] Security audit complete
+  │   - [ ] Security audit complete (wallet + payments)
   │   - [ ] Performance benchmarks met
+  │   - [ ] Stripe live mode configured
+  │   - [ ] Smart contracts deployed to Monad mainnet
   │   - [ ] Documentation up to date
   │   - [ ] CHANGELOG.md updated
   │   - [ ] Version bumped to v0.3.0
@@ -651,10 +776,14 @@ Please complete Step 1 first, then return to Step 2.
 v0.1.0 - Initial setup (Dec 3, 2025)
 v0.2.0 - Foundation complete (Dec 4, 2025)
 v0.3.0-alpha.1 - Auto-deploy merged
-v0.3.0-alpha.2 - NFT rarity merged
-v0.3.0-alpha.3 - Brand generation merged
-v0.3.0-alpha.4 - Design tokens merged
-v0.3.0-alpha.5 - Preview deployments merged
+v0.3.0-alpha.2 - Wallet integration merged ⚠️
+v0.3.0-alpha.3 - NFT rarity merged
+v0.3.0-alpha.4 - Payment flows merged ⚠️
+v0.3.0-alpha.5 - Brand generation merged
+v0.3.0-alpha.6 - Design tokens merged
+v0.3.0-alpha.7 - Claude usage tracking merged
+v0.3.0-alpha.8 - Design site merged
+v0.3.0-alpha.9 - Preview deployments merged
 v0.3.0-beta.1 - Integration testing
 v0.3.0 - Phase 1 complete (Dec 11, 2025)
 v0.4.0 - Component generation (Dec 18, 2025)
@@ -667,21 +796,39 @@ v1.0.0 - Public launch (Jan 15, 2026) 🚀
 ## Current Status
 
 **Active Phase**: Phase 1 (Core Brand Generation)
-**Current Step**: Step 1 - Installing dependencies for `feature/auto-deploy`
-**Next Step**: Complete installation → Run tests → Merge to `develop`
+**Current Step**: Planning complete for all 9 features
+**Next Step**: Implementation starts Dec 7, 2025 (Saturday)
 
 **Branches Status**:
 - ✅ `feature/foundation` - Merged to main (v0.2.0)
-- 🟡 `feature/auto-deploy` - Code complete, installing deps
-- 🔵 `feature/preview-deployments` - Not started (waiting for auto-deploy)
-- 🔵 `feature/brand-generation` - Not started
-- 🔵 `feature/design-tokens` - Not started
-- 🔵 `feature/nft-rarity` - Design complete, code not started
+- 🔵 `feature/auto-deploy` - Planning complete, code unstaged
+- 🔵 `feature/wallet-integration` - ⚠️ CRITICAL - Planning complete
+- 🔵 `feature/nft-rarity` - Planning complete
+- 🔵 `feature/payment-flows` - ⚠️ CRITICAL - Planning complete
+- 🔵 `feature/brand-generation` - Planning complete
+- 🔵 `feature/design-tokens` - Planning complete
+- 🔵 `feature/claude-usage-tracking` - Planning complete
+- 🔵 `feature/design-site` - Planning complete
+- 🔵 `feature/preview-deployments` - Planning complete
+
+**Planning Documentation Status**:
+- ✅ All 9 features fully documented
+- ✅ Merge order defined with dependencies
+- ✅ Pre-merge checklists created
+- ✅ Business plan with revenue projections
+- ✅ Technical architecture documented
+- ✅ Wallet & payment integrations planned
+
+**Critical Additions (Dec 5, 2025)**:
+- ⚠️ Wallet Integration (1.8) - Multi-wallet, SIWE auth, Monad network
+- ⚠️ Payment Flows (1.9) - Stripe + crypto payments, revenue tracking
+
+**Total Phase 1 Features**: 9 (up from 5)
 
 ---
 
-**Last Updated**: December 4, 2025
-**Document Version**: 1.0.0
-**Status**: Active Development Plan
+**Last Updated**: December 5, 2025
+**Document Version**: 2.0.0
+**Status**: Planning Complete - Ready for Implementation
 
 **⚠️ WARNING**: This plan is the single source of truth for development. Deviation requires team approval and document update.
