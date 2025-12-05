@@ -27,10 +27,15 @@
 
 ### Our Solution
 **Complete brand package in <3 minutes** including:
+
 - ✅ Logo system & visual identity
+
 - ✅ Design tokens & component library
+
 - ✅ Live deployment to custom subdomain
+
 - ✅ NFT certificate with on-chain provenance
+
 - ✅ Export-ready files (React, Figma, Penpot)
 
 ---
@@ -49,10 +54,15 @@
 
 ### **MACHUPS Advantages**
 ✅ **Fastest**: <3 minutes vs 15-30 min (competitors) or weeks (agencies)
+
 ✅ **Most Complete**: Logo + tokens + components + deployment + NFT
+
 ✅ **Web3-Native**: On-chain certificates, Monad integration
+
 ✅ **Developer-Focused**: Export to React, Penpot, GitHub
+
 ✅ **Live Deployment**: Instant subdomain with SSL
+
 ✅ **Fair Pricing**: Pay-per-use + optional premium
 
 ---

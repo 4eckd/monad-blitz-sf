@@ -1,0 +1,114 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="1200" fill="url(#gradient-bg)"/>
+
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient-bg" x1="0" y1="0" x2="1200" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="50%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+
+    <linearGradient id="gradient-accent" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#A78BFA"/>
+      <stop offset="100%" stop-color="#8B5CF6"/>
+    </linearGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Decorative Border -->
+  <rect x="40" y="40" width="1120" height="1120" rx="20" stroke="url(#gradient-accent)" stroke-width="4" fill="none"/>
+  <rect x="60" y="60" width="1080" height="1080" rx="10" stroke="#475569" stroke-width="2" fill="none" opacity="0.5"/>
+
+  <!-- Event Logo / Badge -->
+  <g id="event-badge" transform="translate(600, 150)">
+    <!-- Monad Logo Placeholder -->
+    <circle cx="0" cy="0" r="60" fill="#8B5CF6" filter="url(#glow)"/>
+    <text x="0" y="10" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="700" fill="white" text-anchor="middle">M</text>
+  </g>
+
+  <!-- Event Title -->
+  <text x="600" y="250" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="700" fill="url(#gradient-accent)" text-anchor="middle">
+    MONAD BLITZ SF #18
+  </text>
+
+  <!-- Certificate Title -->
+  <text x="600" y="320" font-family="Inter, system-ui, sans-serif" font-size="56" font-weight="800" fill="white" text-anchor="middle">
+    Brand Certificate
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="370" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="400" fill="#94A3B8" text-anchor="middle">
+    Generated with MACHUPS AI
+  </text>
+
+  <!-- Screenshot Placeholder (will be replaced with actual screenshot) -->
+  <g id="screenshot-container" transform="translate(225, 420)">
+    <rect width="750" height="394" rx="12" fill="#1E293B" stroke="#475569" stroke-width="2"/>
+    <text x="375" y="197" font-family="Inter, system-ui, sans-serif" font-size="20" fill="#64748B" text-anchor="middle">
+      Brand Screenshot
+    </text>
+  </g>
+
+  <!-- Brand Name (Dynamic) -->
+  <text id="brand-name" x="600" y="890" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="700" fill="white" text-anchor="middle">
+    [Brand Name]
+  </text>
+
+  <!-- Subdomain -->
+  <text id="subdomain" x="600" y="940" font-family="Inter, system-ui, sans-serif" font-size="24" font-weight="500" fill="#8B5CF6" text-anchor="middle">
+    brand.machups.com
+  </text>
+
+  <!-- Generation Date -->
+  <text id="generation-date" x="600" y="990" font-family="Inter, system-ui, sans-serif" font-size="18" font-weight="400" fill="#94A3B8" text-anchor="middle">
+    Generated December 6, 2025
+  </text>
+
+  <!-- Footer Info -->
+  <g id="footer" transform="translate(600, 1050)">
+    <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="16" font-weight="600" fill="#64748B" text-anchor="middle">
+      SAN FRANCISCO • CALIFORNIA • USA
+    </text>
+    <text x="0" y="30" font-family="Inter, system-ui, sans-serif" font-size="14" font-weight="400" fill="#475569" text-anchor="middle">
+      MACHUPS.COM • POWERED BY MONAD
+    </text>
+  </g>
+
+  <!-- Decorative Elements -->
+  <g id="decorative-lines">
+    <!-- Top accent lines -->
+    <line x1="300" y1="380" x2="500" y2="380" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
+    <line x1="700" y1="380" x2="900" y2="380" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
+
+    <!-- Bottom accent lines -->
+    <line x1="300" y1="1010" x2="500" y1010" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
+    <line x1="700" y1="1010" x2="900" y2="1010" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <!-- Corner Decorations -->
+  <g id="corner-top-left" transform="translate(80, 80)">
+    <path d="M 0 20 L 0 0 L 20 0" stroke="url(#gradient-accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g id="corner-top-right" transform="translate(1120, 80) scale(-1, 1)">
+    <path d="M 0 20 L 0 0 L 20 0" stroke="url(#gradient-accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g id="corner-bottom-left" transform="translate(80, 1120) scale(1, -1)">
+    <path d="M 0 20 L 0 0 L 20 0" stroke="url(#gradient-accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g id="corner-bottom-right" transform="translate(1120, 1120) scale(-1, -1)">
+    <path d="M 0 20 L 0 0 L 20 0" stroke="url(#gradient-accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
