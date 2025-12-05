@@ -1,0 +1,11 @@
+{
+  "name": "MACHUPS Docs Deployment Webhook",
+  "events": [
+    "deployment.created",
+    "deployment.succeeded",
+    "deployment.failed",
+    "deployment.canceled"
+  ],
+  "url": "https://api.machups.com/webhooks/vercel/docs",
+  "secret": "REPLACE_WITH_WEBHOOK_SECRET"
+}

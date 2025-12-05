@@ -21,7 +21,29 @@ pnpm serve
 
 ## Deployment
 
-The site is automatically deployed to docs.machups.com via Vercel using the DOCS_VERCEL_TOKEN.
+### Auto-Deploy (Recommended)
+
+The site automatically deploys to Vercel on every push to `main` that modifies `website/**` files via GitHub Actions.
+
+**Required GitHub Secrets:**
+- `VERCEL_TOKEN`: API token from https://vercel.com/account/tokens
+- `VERCEL_ORG_ID`: `team_htUXlE6aixhhmBuybRXvhe8S`
+- `VERCEL_PROJECT_ID`: `prj_pVv7IcDUYnOUPG0TBCi268pgw6l1`
+
+See `.github/workflows/deploy-docs.yml` for workflow configuration.
+
+### Webhook Integration
+
+Vercel sends deployment events to the main app:
+
+```json
+{
+  "events": ["deployment.succeeded", "deployment.failed"],
+  "url": "https://api.machups.com/webhooks/vercel/docs"
+}
+```
+
+Set up in Vercel dashboard under Project Settings → Webhooks.
 
 ### Manual Deployment
 
@@ -29,8 +51,10 @@ The site is automatically deployed to docs.machups.com via Vercel using the DOCS
 # Build
 pnpm build
 
-# Deploy to Vercel
-vercel --prod
+# Deploy to production
+VERCEL_ORG_ID=team_htUXlE6aixhhmBuybRXvhe8S \
+VERCEL_PROJECT_ID=prj_pVv7IcDUYnOUPG0TBCi268pgw6l1 \
+vercel --prod --token <token> --yes
 ```
 
 ## Structure
