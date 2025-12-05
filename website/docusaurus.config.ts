@@ -50,7 +50,8 @@ const config: Config = {
   ],
 
   themeConfig: {
-    image: 'img/machups-social-card.png',
+    // Dynamic OG image - generated on-the-fly for each page
+    image: 'https://api.machups.com/api/og/docs?title=MACHUPS%20Documentation&section=Docs',
     navbar: {
       title: 'MACHUPS',
       logo: {
