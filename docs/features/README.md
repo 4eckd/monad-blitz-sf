@@ -28,6 +28,7 @@ Features are organized by the 4-phase development roadmap:
 | [2.3 Component Playground](./phase2/2.3-component-playground/) | 🔵 Planning | v0.4.0-alpha.3 |
 | [2.4 Accessibility Audit](./phase2/2.4-accessibility-audit/) | 🔵 Planning | v0.4.0-alpha.4 |
 | [2.5 Penpot Integration](./phase2/2.5-penpot-integration/) | 🔵 Planning | v0.4.0-alpha.5 |
+| [2.6 Playwright Testing](./phase2/2.6-playwright-testing/) | 🔵 Planning | v0.4.0-alpha.6 |
 
 ### Phase 3: Premium Features (v0.5.0)
 **Timeline**: Dec 19-25, 2025
@@ -37,8 +38,7 @@ Features are organized by the 4-phase development roadmap:
 | [3.1 Pitch Deck Generator](./phase3/3.1-pitch-deck-generator/) | 🔵 Planning | v0.5.0-alpha.1 |
 | [3.2 A/B Testing Variants](./phase3/3.2-ab-testing-variants/) | 🔵 Planning | v0.5.0-alpha.2 |
 | [3.3 Custom Domains](./phase3/3.3-custom-domains/) | 🔵 Planning | v0.5.0-alpha.3 |
-| [3.4 Figma MCP](./phase3/3.4-figma-mcp/) | 🔵 Planning | v0.5.0-alpha.4 |
-| [3.5 GitHub MCP](./phase3/3.5-github-mcp/) | 🔵 Planning | v0.5.0-alpha.5 |
+| [3.4 GitHub MCP](./phase3/3.4-github-mcp/) | 🔵 Planning | v0.5.0-alpha.4 |
 
 ### Phase 4: Production Launch (v1.0.0)
 **Timeline**: Dec 26, 2025 - Jan 15, 2026
@@ -76,8 +76,8 @@ Each feature directory contains:
 ---
 
 **Last Updated**: December 4, 2025
-**Total Features**: 21 across 4 phases
+**Total Features**: 20 across 4 phases
 - **Phase 1**: 6 features (Core Brand Generation)
-- **Phase 2**: 5 features (Component Generation + Design Tools)
-- **Phase 3**: 5 features (Premium + MCP Integrations)
+- **Phase 2**: 6 features (Component Generation + Testing)
+- **Phase 3**: 4 features (Premium + MCP Integrations)
 - **Phase 4**: 5 features (Production Infrastructure)

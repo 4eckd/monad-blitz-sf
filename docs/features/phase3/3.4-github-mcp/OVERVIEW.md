@@ -1,6 +1,6 @@
 # GitHub MCP Integration - Feature Plan
 
-**Phase 3, Step 5** | `feature/github-mcp` | v0.5.0-alpha.5 | 2 days
+**Phase 3, Step 4** | `feature/github-mcp` | v0.5.0-alpha.4 | 2 days
 
 ## Goals
 - One-click GitHub repo creation
