@@ -48,7 +48,7 @@ Click "Generate Brand" and watch the magic happen:
 5. Components generated (~45s)
 6. Guidelines PDF created (~60s)
 
-**Total time: <3 minutes**
+**Total time: Under 3 minutes**
 
 ## Step 4: Review Your Brand Package
 
@@ -110,9 +110,8 @@ brand-package/
 
 ## Next Steps
 
-- [Features](./features/brand-generation) - Explore all features
-- [API Reference](./api/overview) - Integrate MACHUPS into your app
 - [Database](./database/postgres) - Database architecture
+- [Installation](./installation) - Self-hosting guide
 
 ## Troubleshooting
 

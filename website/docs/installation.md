@@ -102,7 +102,7 @@ const brand = await machups.brands.create({
 const assets = await machups.brands.download(brand.id);
 ```
 
-See [API Reference](./api/overview) for complete documentation.
+API Reference documentation coming soon.
 
 ## Docker Deployment
 
@@ -120,5 +120,4 @@ docker run -p 3000:3000 \
 ## Next Steps
 
 - [Quick Start](./quickstart) - Generate your first brand
-- [API Reference](./api/overview) - API documentation
 - [Database](./database/postgres) - Database setup
