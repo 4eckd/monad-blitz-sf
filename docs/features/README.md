@@ -18,6 +18,8 @@ Features are organized by the 4-phase development roadmap:
 | [1.5 Preview Deployments](./phase1/1.5-preview-deployments/) | 🔵 Planning | v0.3.0-alpha.5 |
 | [1.6 Design Site](./phase1/1.6-design-site/) | 🔵 Planning | v0.3.0-alpha.6 |
 | [1.7 Claude Usage Tracking](./phase1/1.7-claude-usage-tracking/) | 🔵 Planning | v0.3.0-alpha.7 |
+| [1.8 Wallet Integration](./phase1/1.8-wallet-integration/) | 🔵 Planning | v0.3.0-alpha.8 |
+| [1.9 Payment Flows](./phase1/1.9-payment-flows/) | 🔵 Planning | v0.3.0-alpha.9 |
 
 ### Phase 2: Component Generation (v0.4.0)
 **Timeline**: Dec 12-18, 2025
@@ -84,9 +86,9 @@ These directories are complementary, not duplicates.
 
 ---
 
-**Last Updated**: December 4, 2025
-**Total Features**: 21 across 4 phases
-- **Phase 1**: 7 features (Core Brand Generation + Infrastructure)
+**Last Updated**: December 5, 2025
+**Total Features**: 23 across 4 phases
+- **Phase 1**: 9 features (Core Brand Generation + Payments + Infrastructure)
 - **Phase 2**: 6 features (Component Generation + Testing)
 - **Phase 3**: 4 features (Premium + MCP Integrations)
 - **Phase 4**: 5 features (Production Infrastructure)
