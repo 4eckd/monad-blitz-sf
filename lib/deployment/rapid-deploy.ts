@@ -67,7 +67,7 @@ export class RapidDeploymentSystem {
       const deployment = await this.deployToVercel();
 
       // Step 4: Configure custom domain
-      await this.configureDomain(deployment.deploymentUrl);
+      await this.configureDomain(deployment.url);
 
       // Step 5: Set up CI/CD
       await this.setupCICD();

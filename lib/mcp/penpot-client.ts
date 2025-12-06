@@ -8,8 +8,9 @@
  * - Export assets
  */
 
-import { Client } from '@modelcontextprotocol/sdk/client/index.js';
-import { StdioClientTransport } from '@modelcontextprotocol/sdk/client/stdio.js';
+import { Client } from '@modelcontextprotocol/sdk/client';
+// @ts-expect-error - StdioClientTransport is not exported in package.json but exists
+import { StdioClientTransport } from '@modelcontextprotocol/sdk/dist/esm/client/stdio.js';
 
 export interface PenpotConfig {
   serverUrl: string;
@@ -95,9 +96,7 @@ export class PenpotMCPClient {
           version: '1.0.0',
         },
         {
-          capabilities: {
-            tools: {},
-          },
+          capabilities: {},
         }
       );
 

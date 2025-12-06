@@ -152,7 +152,7 @@ export class CloudflareDeployer {
       id: result.id,
       projectName,
       deploymentUrl: result.url,
-      status: result.latest_stage.status,
+      status: result.latest_stage.status as 'queued' | 'building' | 'deploying' | 'success' | 'failure',
       createdAt: new Date(result.created_on)
     };
   }
@@ -189,7 +189,7 @@ export class CloudflareDeployer {
       id: result.id,
       projectName,
       deploymentUrl: result.url,
-      status: result.latest_stage.status,
+      status: result.latest_stage.status as 'queued' | 'building' | 'deploying' | 'success' | 'failure',
       buildLog: result.build_log,
       errorMessage: result.latest_stage.error_message,
       createdAt: new Date(result.created_on)
