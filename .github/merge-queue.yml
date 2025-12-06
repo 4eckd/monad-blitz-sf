@@ -1,0 +1,19 @@
+# GitHub Merge Queue Configuration
+# Automatically manages PR merges in correct dependency order
+
+# Merge queue rules
+queue_rules:
+  - name: phase-1-queue
+    conditions:
+      - base=main
+      - label=phase-1
+    merge_method: squash
+
+  - name: feature-queue
+    conditions:
+      - base=main
+      - label=feature
+    merge_method: merge
+
+# Branch protection will be configured via GitHub settings
+# This file documents the intended merge queue setup

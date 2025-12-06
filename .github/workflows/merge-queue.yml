@@ -1,0 +1,92 @@
+name: Merge Queue Automation
+
+on:
+  pull_request:
+    types: [labeled, opened, synchronize]
+  workflow_dispatch:
+
+jobs:
+  check-merge-order:
+    name: Check Merge Order
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'ready-to-merge')
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check Branch Dependencies
+        id: check-deps
+        run: |
+          BRANCH="${{ github.head_ref }}"
+          BASE="${{ github.base_ref }}"
+
+          echo "Source branch: $BRANCH"
+          echo "Target branch: $BASE"
+
+          # Define merge order
+          # claude/claude-ai-integration should merge first (to coordinator or main)
+          # claude/phase-1-coordinator should merge second (to main)
+          # claude/generators should merge third (to coordinator or main)
+
+          SAFE_TO_MERGE=true
+
+          if [[ "$BRANCH" == *"phase-1-coordinator"* ]] && [[ "$BASE" == "main" ]]; then
+            # Check if claude-ai-integration is merged
+            if git log $BASE --oneline | grep -q "claude-ai-integration"; then
+              echo "✅ Dependencies satisfied: claude-ai-integration already merged"
+              SAFE_TO_MERGE=true
+            else
+              echo "⚠️ Warning: claude-ai-integration not yet merged to $BASE"
+              echo "Recommended: Merge claude-ai-integration first"
+              SAFE_TO_MERGE=false
+            fi
+          fi
+
+          if [[ "$BRANCH" == *"generators"* ]] && [[ "$BASE" == "main" ]]; then
+            # Check if coordinator is merged
+            if git log $BASE --oneline | grep -q "phase-1-coordinator"; then
+              echo "✅ Dependencies satisfied: coordinator already merged"
+              SAFE_TO_MERGE=true
+            else
+              echo "⚠️ Warning: coordinator not yet merged to $BASE"
+              echo "Recommended: Merge coordinator first"
+              SAFE_TO_MERGE=false
+            fi
+          fi
+
+          echo "safe_to_merge=$SAFE_TO_MERGE" >> $GITHUB_OUTPUT
+
+      - name: Comment on PR
+        if: steps.check-deps.outputs.safe_to_merge == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: '⚠️ **Merge Order Warning**\n\nThis PR may have dependencies that should be merged first.\n\nRecommended merge order:\n1. `claude/claude-ai-integration-*` → coordinator or main\n2. `claude/phase-1-coordinator-*` → main\n3. `claude/generators-*` → coordinator or main\n\nSee `MERGE_ORDER.sh` for details.'
+            })
+
+  auto-merge:
+    name: Auto-merge when ready
+    runs-on: ubuntu-latest
+    needs: check-merge-order
+    if: |
+      contains(github.event.pull_request.labels.*.name, 'auto-merge') &&
+      github.event.pull_request.mergeable == true
+
+    steps:
+      - name: Enable auto-merge
+        uses: actions/github-script@v7
+        with:
+          script: |
+            await github.rest.pulls.merge({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: context.issue.number,
+              merge_method: 'squash'
+            })
