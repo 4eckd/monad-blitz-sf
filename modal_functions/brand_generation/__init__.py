@@ -1,0 +1,1 @@
+"""Brand generation Modal functions"""

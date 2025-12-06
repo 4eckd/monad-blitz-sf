@@ -1,92 +1,155 @@
-name: Merge Queue Automation
+name: Merge Queue CI
 
 on:
+  merge_group:
+    types: [checks_requested]
   pull_request:
-    types: [labeled, opened, synchronize]
-  workflow_dispatch:
+    branches: [main, develop, phase-*]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.merge_group.head_ref || github.head_ref || github.ref }}
+  cancel-in-progress: true
 
 jobs:
-  check-merge-order:
-    name: Check Merge Order
+  lint:
+    name: Lint
     runs-on: ubuntu-latest
-    if: contains(github.event.pull_request.labels.*.name, 'ready-to-merge')
-
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          fetch-depth: 0
+          node-version: '18'
+          cache: 'pnpm'
 
-      - name: Check Branch Dependencies
-        id: check-deps
-        run: |
-          BRANCH="${{ github.head_ref }}"
-          BASE="${{ github.base_ref }}"
-
-          echo "Source branch: $BRANCH"
-          echo "Target branch: $BASE"
-
-          # Define merge order
-          # claude/claude-ai-integration should merge first (to coordinator or main)
-          # claude/phase-1-coordinator should merge second (to main)
-          # claude/generators should merge third (to coordinator or main)
-
-          SAFE_TO_MERGE=true
-
-          if [[ "$BRANCH" == *"phase-1-coordinator"* ]] && [[ "$BASE" == "main" ]]; then
-            # Check if claude-ai-integration is merged
-            if git log $BASE --oneline | grep -q "claude-ai-integration"; then
-              echo "✅ Dependencies satisfied: claude-ai-integration already merged"
-              SAFE_TO_MERGE=true
-            else
-              echo "⚠️ Warning: claude-ai-integration not yet merged to $BASE"
-              echo "Recommended: Merge claude-ai-integration first"
-              SAFE_TO_MERGE=false
-            fi
-          fi
-
-          if [[ "$BRANCH" == *"generators"* ]] && [[ "$BASE" == "main" ]]; then
-            # Check if coordinator is merged
-            if git log $BASE --oneline | grep -q "phase-1-coordinator"; then
-              echo "✅ Dependencies satisfied: coordinator already merged"
-              SAFE_TO_MERGE=true
-            else
-              echo "⚠️ Warning: coordinator not yet merged to $BASE"
-              echo "Recommended: Merge coordinator first"
-              SAFE_TO_MERGE=false
-            fi
-          fi
-
-          echo "safe_to_merge=$SAFE_TO_MERGE" >> $GITHUB_OUTPUT
-
-      - name: Comment on PR
-        if: steps.check-deps.outputs.safe_to_merge == 'false'
-        uses: actions/github-script@v7
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
         with:
-          script: |
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: '⚠️ **Merge Order Warning**\n\nThis PR may have dependencies that should be merged first.\n\nRecommended merge order:\n1. `claude/claude-ai-integration-*` → coordinator or main\n2. `claude/phase-1-coordinator-*` → main\n3. `claude/generators-*` → coordinator or main\n\nSee `MERGE_ORDER.sh` for details.'
-            })
+          version: 9
 
-  auto-merge:
-    name: Auto-merge when ready
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run ESLint
+        run: pnpm lint
+
+  type-check:
+    name: Type Check
     runs-on: ubuntu-latest
-    needs: check-merge-order
-    if: |
-      contains(github.event.pull_request.labels.*.name, 'auto-merge') &&
-      github.event.pull_request.mergeable == true
-
+    timeout-minutes: 5
     steps:
-      - name: Enable auto-merge
-        uses: actions/github-script@v7
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          script: |
-            await github.rest.pulls.merge({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              pull_number: context.issue.number,
-              merge_method: 'squash'
-            })
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run TypeScript compiler
+        run: pnpm type-check
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Next.js
+        run: pnpm build
+        env:
+          NEXT_PUBLIC_APP_URL: https://machups.com
+
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'pnpm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Run tests
+        run: pnpm test
+
+  security-scan:
+    name: Security Scan
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run TruffleHog
+        uses: trufflesecurity/trufflehog@main
+        with:
+          path: ./
+          base: ${{ github.event.repository.default_branch }}
+          head: HEAD
+          extra_args: --debug --only-verified
+
+  merge-queue-status:
+    name: Merge Queue Status
+    runs-on: ubuntu-latest
+    needs: [lint, type-check, build, test, security-scan]
+    if: always()
+    steps:
+      - name: Check all jobs
+        run: |
+          if [[ "${{ needs.lint.result }}" == "success" && \
+                "${{ needs.type-check.result }}" == "success" && \
+                "${{ needs.build.result }}" == "success" && \
+                "${{ needs.test.result }}" == "success" && \
+                "${{ needs.security-scan.result }}" == "success" ]]; then
+            echo "✅ All checks passed - Ready to merge"
+            exit 0
+          else
+            echo "❌ Some checks failed - Cannot merge"
+            echo "Lint: ${{ needs.lint.result }}"
+            echo "Type Check: ${{ needs.type-check.result }}"
+            echo "Build: ${{ needs.build.result }}"
+            echo "Test: ${{ needs.test.result }}"
+            echo "Security: ${{ needs.security-scan.result }}"
+            exit 1
+          fi
