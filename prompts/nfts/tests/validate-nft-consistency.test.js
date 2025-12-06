@@ -83,7 +83,7 @@ const REQUIRED_ELEMENTS = [
 const REQUIRED_TEXT = {
   event: 'MONAD BLITZ SF #18',
   title: 'BRAND CERTIFICATE',
-  subtitle: 'MACHUPS.COM',
+  subtitle: 'WITH FOUNDERS.INC',
   footer: 'MACHUPS.COM • POWERED BY MONAD',
   brandPlaceholder: '[BRAND NAME]',
   subdomainPlaceholder: 'brand.machups.com'

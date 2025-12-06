@@ -120,7 +120,7 @@ All tiers share the **identical layout**:
 ║                                                                              ║
 ║                        BRAND CERTIFICATE                                    ║
 ║                                                                              ║
-║                          MACHUPS.COM                                        ║
+║                       WITH FOUNDERS.INC                                     ║
 ║                                                                              ║
 ║           ┌────────────────────────────────────────────────┐                ║
 ║           │         BRAND SCREENSHOT PREVIEW               │                ║
@@ -147,7 +147,7 @@ All tiers share the **identical layout**:
 - ✅ Monad logomark (centered at top)
 - ✅ Event title: "MONAD BLITZ SF #18"
 - ✅ Certificate title: "BRAND CERTIFICATE"
-- ✅ Subtitle: "MACHUPS.COM"
+- ✅ Subtitle: "WITH FOUNDERS.INC"
 - ✅ Screenshot container (750x394px)
 - ✅ Brand name placeholder: "[BRAND NAME]"
 - ✅ Subdomain: "brand.machups.com"
