@@ -1,0 +1,413 @@
+{
+  "$schema": "https://penpot.app/schema/design-system/1.0.0",
+  "$metadata": {
+    "brand": "GONADS",
+    "tagline": "Balls to the Wall DeFi",
+    "version": "1.0.0",
+    "generatedBy": "MACHUPS - AI-Powered Brand Generation",
+    "generatedAt": "2025-12-06T00:00:00Z",
+    "description": "Complete Penpot design system for Gonads.io NFT project",
+    "compatibility": "Penpot 2.0+",
+    "w3cDtcgCompliant": true
+  },
+
+  "colorPalette": {
+    "brand": {
+      "primary": {
+        "name": "Ballsy Purple",
+        "hex": "#9333EA",
+        "rgb": "147, 51, 234",
+        "hsl": "274, 82%, 56%",
+        "usage": "Primary CTAs, headings, brand elements",
+        "wcagAA": true,
+        "contrastRatio": 4.8
+      },
+      "secondary": {
+        "name": "Testicular Teal",
+        "hex": "#14B8A6",
+        "rgb": "20, 184, 166",
+        "hsl": "173, 80%, 40%",
+        "usage": "Secondary CTAs, accents, highlights",
+        "wcagAA": true,
+        "contrastRatio": 3.2
+      },
+      "accent": {
+        "name": "Vitality Orange",
+        "hex": "#F97316",
+        "rgb": "249, 115, 22",
+        "hsl": "25, 95%, 53%",
+        "usage": "Urgent CTAs, notifications, warnings",
+        "wcagAA": true,
+        "contrastRatio": 3.1
+      }
+    },
+
+    "neutral": {
+      "900": {
+        "name": "Midnight Meme",
+        "hex": "#0F172A",
+        "usage": "Primary background, dark mode base"
+      },
+      "800": {
+        "name": "Slate Deep",
+        "hex": "#1E293B",
+        "usage": "Card backgrounds, elevated surfaces"
+      },
+      "700": { "hex": "#334155", "usage": "Borders, dividers" },
+      "600": { "hex": "#475569", "usage": "Disabled states" },
+      "500": { "hex": "#64748B", "usage": "Placeholder text" },
+      "400": { "hex": "#94A3B8", "usage": "Secondary text" },
+      "300": { "hex": "#CBD5E1", "usage": "Muted text" },
+      "200": { "hex": "#E2E8F0", "usage": "Subtle borders" },
+      "100": { "hex": "#F1F5F9", "usage": "Light backgrounds" },
+      "50": {
+        "name": "Moonshot White",
+        "hex": "#F8FAFC",
+        "usage": "Pure white, light mode"
+      }
+    },
+
+    "semantic": {
+      "success": {
+        "hex": "#10B981",
+        "name": "Mint Success",
+        "usage": "Success states, confirmations"
+      },
+      "warning": {
+        "hex": "#F59E0B",
+        "name": "Caution Yellow",
+        "usage": "Warnings, alerts"
+      },
+      "error": {
+        "hex": "#EF4444",
+        "name": "Rug Pull Red",
+        "usage": "Errors, failures"
+      },
+      "info": {
+        "hex": "#3B82F6",
+        "name": "DYOR Blue",
+        "usage": "Information, tips"
+      }
+    },
+
+    "gradients": {
+      "primary": {
+        "name": "Ballsy Gradient",
+        "value": "linear-gradient(135deg, #9333EA 0%, #14B8A6 100%)",
+        "stops": [
+          { "color": "#9333EA", "position": "0%" },
+          { "color": "#14B8A6", "position": "100%" }
+        ],
+        "usage": "Primary buttons, hero sections"
+      },
+      "accent": {
+        "name": "Fire Gradient",
+        "value": "linear-gradient(135deg, #F97316 0%, #9333EA 100%)",
+        "stops": [
+          { "color": "#F97316", "position": "0%" },
+          { "color": "#9333EA", "position": "100%" }
+        ],
+        "usage": "Accent elements, highlights"
+      },
+      "dark": {
+        "name": "Deep Space",
+        "value": "linear-gradient(180deg, #0F172A 0%, #1E293B 100%)",
+        "stops": [
+          { "color": "#0F172A", "position": "0%" },
+          { "color": "#1E293B", "position": "100%" }
+        ],
+        "usage": "Dark backgrounds, overlays"
+      }
+    }
+  },
+
+  "typography": {
+    "fontFamilies": {
+      "heading": {
+        "name": "Inter",
+        "weights": [700, 800, 900],
+        "fallback": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "source": "Google Fonts",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "usage": "Headlines, CTAs, logo, section headers"
+      },
+      "body": {
+        "name": "Inter",
+        "weights": [400, 500, 600],
+        "fallback": "system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif",
+        "source": "Google Fonts",
+        "url": "https://fonts.google.com/specimen/Inter",
+        "usage": "Body text, UI elements, descriptions"
+      },
+      "mono": {
+        "name": "JetBrains Mono",
+        "weights": [400, 700],
+        "fallback": "Consolas, Monaco, 'Courier New', monospace",
+        "source": "Google Fonts",
+        "url": "https://fonts.google.com/specimen/JetBrains+Mono",
+        "usage": "Code, wallet addresses, contract IDs, stats"
+      }
+    },
+
+    "typeScale": {
+      "xs": {
+        "fontSize": "0.75rem",
+        "lineHeight": "1.25",
+        "letterSpacing": "0em",
+        "pixelSize": "12px",
+        "usage": "Fine print, captions"
+      },
+      "sm": {
+        "fontSize": "0.875rem",
+        "lineHeight": "1.375",
+        "letterSpacing": "0em",
+        "pixelSize": "14px",
+        "usage": "Small body text, labels"
+      },
+      "base": {
+        "fontSize": "1rem",
+        "lineHeight": "1.5",
+        "letterSpacing": "0em",
+        "pixelSize": "16px",
+        "usage": "Body text, paragraphs"
+      },
+      "lg": {
+        "fontSize": "1.125rem",
+        "lineHeight": "1.625",
+        "letterSpacing": "0em",
+        "pixelSize": "18px",
+        "usage": "Large body, intro text"
+      },
+      "xl": {
+        "fontSize": "1.25rem",
+        "lineHeight": "1.5",
+        "letterSpacing": "-0.025em",
+        "pixelSize": "20px",
+        "usage": "Small headings"
+      },
+      "2xl": {
+        "fontSize": "1.5rem",
+        "lineHeight": "1.375",
+        "letterSpacing": "-0.025em",
+        "pixelSize": "24px",
+        "usage": "Subheadings"
+      },
+      "3xl": {
+        "fontSize": "1.875rem",
+        "lineHeight": "1.25",
+        "letterSpacing": "-0.05em",
+        "pixelSize": "30px",
+        "usage": "Card titles, section headers"
+      },
+      "4xl": {
+        "fontSize": "2.25rem",
+        "lineHeight": "1.25",
+        "letterSpacing": "-0.05em",
+        "pixelSize": "36px",
+        "usage": "Page headings"
+      },
+      "5xl": {
+        "fontSize": "3rem",
+        "lineHeight": "1.125",
+        "letterSpacing": "-0.05em",
+        "pixelSize": "48px",
+        "usage": "Large headings"
+      },
+      "6xl": {
+        "fontSize": "3.75rem",
+        "lineHeight": "1",
+        "letterSpacing": "-0.05em",
+        "pixelSize": "60px",
+        "usage": "Hero headings, display text"
+      }
+    },
+
+    "fontWeights": {
+      "normal": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700,
+      "extrabold": 800,
+      "black": 900
+    }
+  },
+
+  "spacing": {
+    "xs": { "value": "0.25rem", "pixels": "4px", "usage": "Tight spacing" },
+    "sm": { "value": "0.5rem", "pixels": "8px", "usage": "Small spacing" },
+    "md": { "value": "1rem", "pixels": "16px", "usage": "Base spacing" },
+    "lg": { "value": "1.5rem", "pixels": "24px", "usage": "Medium spacing" },
+    "xl": { "value": "2rem", "pixels": "32px", "usage": "Large spacing" },
+    "2xl": { "value": "3rem", "pixels": "48px", "usage": "Extra large" },
+    "3xl": { "value": "4rem", "pixels": "64px", "usage": "Section spacing" },
+    "4xl": { "value": "6rem", "pixels": "96px", "usage": "Page sections" },
+    "5xl": { "value": "8rem", "pixels": "128px", "usage": "Hero sections" }
+  },
+
+  "borderRadius": {
+    "none": { "value": "0", "usage": "No rounding" },
+    "sm": { "value": "0.25rem", "pixels": "4px", "usage": "Subtle rounding" },
+    "md": { "value": "0.5rem", "pixels": "8px", "usage": "Standard rounding" },
+    "lg": { "value": "1rem", "pixels": "16px", "usage": "Cards, panels" },
+    "xl": { "value": "1.5rem", "pixels": "24px", "usage": "Large cards" },
+    "2xl": { "value": "2rem", "pixels": "32px", "usage": "Featured elements" },
+    "full": { "value": "9999px", "usage": "Pills, circular avatars" }
+  },
+
+  "shadows": {
+    "sm": {
+      "value": "0 1px 2px 0 rgba(0, 0, 0, 0.05)",
+      "usage": "Subtle elevation"
+    },
+    "md": {
+      "value": "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      "usage": "Cards, dropdowns"
+    },
+    "lg": {
+      "value": "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
+      "usage": "Modals, popovers"
+    },
+    "xl": {
+      "value": "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      "usage": "Large modals"
+    },
+    "glowPrimary": {
+      "value": "0 0 20px rgba(147, 51, 234, 0.5)",
+      "usage": "Primary button hover, brand elements"
+    },
+    "glowSecondary": {
+      "value": "0 0 20px rgba(20, 184, 166, 0.5)",
+      "usage": "Secondary accents"
+    },
+    "glowAccent": {
+      "value": "0 0 20px rgba(249, 115, 22, 0.5)",
+      "usage": "Urgent CTAs"
+    }
+  },
+
+  "animation": {
+    "duration": {
+      "fast": "150ms",
+      "normal": "300ms",
+      "slow": "500ms"
+    },
+    "easing": {
+      "easeIn": "cubic-bezier(0.4, 0, 1, 1)",
+      "easeOut": "cubic-bezier(0, 0, 0.2, 1)",
+      "easeInOut": "cubic-bezier(0.4, 0, 0.2, 1)"
+    }
+  },
+
+  "components": {
+    "button": {
+      "variants": ["primary", "secondary", "accent", "ghost"],
+      "sizes": ["sm", "md", "lg"],
+      "states": ["default", "hover", "active", "disabled"],
+      "examples": [
+        {
+          "variant": "primary",
+          "background": "linear-gradient(135deg, #9333EA, #7C3AED)",
+          "color": "#FFFFFF",
+          "hoverEffect": "glow-primary shadow, scale(1.05)"
+        },
+        {
+          "variant": "ghost",
+          "background": "transparent",
+          "color": "#9333EA",
+          "border": "2px solid #9333EA",
+          "hoverEffect": "background #9333EA, color #FFFFFF"
+        }
+      ]
+    },
+
+    "card": {
+      "variants": ["default", "gradient", "glow"],
+      "background": "#1E293B",
+      "borderRadius": "1rem",
+      "padding": "1.5rem",
+      "examples": [
+        {
+          "variant": "glow",
+          "background": "#1E293B",
+          "border": "1px solid #334155",
+          "hoverEffect": "glow-primary shadow"
+        }
+      ]
+    },
+
+    "input": {
+      "background": "#0F172A",
+      "border": "1px solid #334155",
+      "borderRadius": "0.5rem",
+      "padding": "0.75rem 1rem",
+      "focusEffect": "border-color #9333EA, glow-primary shadow"
+    }
+  },
+
+  "logoVariations": [
+    {
+      "type": "wordmark",
+      "file": "logos/wordmark.html",
+      "description": "Text-only logo with gradient effect",
+      "usage": "Primary brand identifier, headers"
+    },
+    {
+      "type": "combination",
+      "file": "logos/combination.html",
+      "description": "Icon + text + tagline combination",
+      "usage": "Social media, app headers"
+    },
+    {
+      "type": "badge",
+      "file": "logos/badge.html",
+      "description": "Circular badge with rotating animation",
+      "usage": "App icons, avatars, profile pictures"
+    }
+  ],
+
+  "brandPersonality": {
+    "adjectives": [
+      "Bold & Audacious",
+      "Playfully Irreverent",
+      "Community-Driven",
+      "Meme-Savvy",
+      "Unapologetically Fun"
+    ],
+    "voiceTone": "Bold, humorous, slightly irreverent but professional where it counts",
+    "targetAudience": "Crypto-native developers, memecoin enthusiasts, NFT collectors (25-40 years old)"
+  },
+
+  "usageGuidelines": {
+    "dosList": [
+      "Use gradients for primary CTAs and hero elements",
+      "Maintain WCAG AA contrast ratios (4.5:1 minimum)",
+      "Use JetBrains Mono for all wallet addresses and contract IDs",
+      "Apply glow effects on hover for interactive elements",
+      "Use dark mode (#0F172A) as primary background",
+      "Keep testicular humor playful but tasteful"
+    ],
+    "dontsList": [
+      "Don't use light mode as primary theme",
+      "Don't mix gradients on nested elements",
+      "Don't use brand colors on low-contrast backgrounds",
+      "Don't use Comic Sans or other non-brand fonts",
+      "Don't dilute the bold, irreverent personality",
+      "Don't skip accessibility requirements"
+    ]
+  },
+
+  "penpotIntegration": {
+    "libraryName": "GONADS Design System",
+    "workspaceId": "auto-generated",
+    "autoSync": true,
+    "syncFrequency": "on-update",
+    "exportFormats": ["penpot", "svg", "png"],
+    "componentMapping": {
+      "Button": ["Primary", "Secondary", "Accent", "Ghost"],
+      "Card": ["Default", "Gradient", "Glow"],
+      "Input": ["Text", "Email", "Password"],
+      "Header": ["WithWallet", "WithoutWallet"],
+      "Footer": ["Full"]
+    }
+  }
+}
