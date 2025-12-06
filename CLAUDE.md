@@ -1,4 +1,12 @@
 # MONAD BLITZ SF - MACHUPS BUILD PLAN
+
+Prompt:
+```
+Create a brand template for our project that automatically deploys to to a sub domain for preview for gonads.io who is thinking about purchasing the $300 / month package for their company team devs composed of 5 members. They need an identity and color scheme that is both attractive / appealing but also slightly catchy with a touch of humar or even cliche'. 
+Gonads embodies the memecoin culture with colorfully and thoughtfully morbid references. They are a web 3 NFT idea. 
+Design their brand as the demo for this project
+```
+
 ## 10-Hour AI-Powered Brand Generation Platform
 
 **Event:** Monad Blitz SF #18 - December 6, 2025

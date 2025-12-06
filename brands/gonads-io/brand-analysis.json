@@ -1,0 +1,130 @@
+{
+  "brandName": "GONADS",
+  "tagline": "Balls to the Wall DeFi",
+  "fullName": "Gonads.io - The Testicular NFT Collective",
+  "
+": {
+    "businessIdea": "Web3 NFT project embracing memecoin culture with colorfully morbid humor and testicular references",
+    "targetAudience": "Crypto-native developers, memecoin enthusiasts, NFT collectors who appreciate edgy humor and web3 culture",
+    "style": "bold",
+    "industry": "Web3/NFT/DeFi"
+  },
+
+  "brandPersonality": [
+    "Bold & Audacious",
+    "Playfully Irreverent",
+    "Community-Driven",
+    "Meme-Savvy",
+    "Unapologetically Fun"
+  ],
+
+  "colorPalette": {
+    "primary": {
+      "name": "Ballsy Purple",
+      "hex": "#9333EA",
+      "description": "Vibrant purple representing boldness and royalty in the memecoin space"
+    },
+    "secondary": {
+      "name": "Testicular Teal",
+      "hex": "#14B8A6",
+      "description": "Eye-catching teal for energy and web3 vibes"
+    },
+    "accent": {
+      "name": "Vitality Orange",
+      "hex": "#F97316",
+      "description": "Bold orange for calls-to-action and highlighting"
+    },
+    "dark": {
+      "name": "Midnight Meme",
+      "hex": "#0F172A",
+      "description": "Deep dark background for crypto-native aesthetic"
+    },
+    "light": {
+      "name": "Moonshot White",
+      "hex": "#F8FAFC",
+      "description": "Clean white for contrast and readability"
+    },
+    "neutrals": {
+      "900": "#0F172A",
+      "800": "#1E293B",
+      "700": "#334155",
+      "600": "#475569",
+      "500": "#64748B",
+      "400": "#94A3B8",
+      "300": "#CBD5E1",
+      "200": "#E2E8F0",
+      "100": "#F1F5F9",
+      "50": "#F8FAFC"
+    },
+    "semantic": {
+      "success": "#10B981",
+      "warning": "#F59E0B",
+      "error": "#EF4444",
+      "info": "#3B82F6"
+    }
+  },
+
+  "typography": {
+    "headingFont": {
+      "family": "Inter",
+      "weights": [700, 800, 900],
+      "fallback": "system-ui, sans-serif",
+      "usage": "Headlines, CTAs, Logo"
+    },
+    "bodyFont": {
+      "family": "Inter",
+      "weights": [400, 500, 600],
+      "fallback": "system-ui, sans-serif",
+      "usage": "Body text, UI elements"
+    },
+    "accentFont": {
+      "family": "JetBrains Mono",
+      "weights": [400, 700],
+      "fallback": "monospace",
+      "usage": "Code, wallet addresses, stats"
+    }
+  },
+
+  "visualStyle": {
+    "aesthetic": "Dark mode crypto-native with vibrant gradients and meme-friendly illustrations",
+    "iconography": "Rounded, playful, with subtle testicular motifs",
+    "patterns": "Circular gradients, animated blobs, particle effects",
+    "imagery": "Bold illustrations, 3D rendered characters, memetic graphics"
+  },
+
+  "messaging": {
+    "voiceTone": "Bold, humorous, slightly irreverent but professional where it counts",
+    "keyMessages": [
+      "The most ballsy NFT project in web3",
+      "Built by degens, for degens",
+      "Where memes meet value",
+      "Testicular fortitude in every transaction",
+      "Community-owned, community-driven"
+    ],
+    "copyExamples": {
+      "hero": "The NFT Project with Real Balls",
+      "cta": "Grab Your Gonads",
+      "community": "Join the Sack",
+      "mint": "Mint Your Pair",
+      "roadmap": "The Descent (Roadmap)"
+    }
+  },
+
+  "targetAudienceProfile": {
+    "demographics": "25-40 years old, tech-savvy, crypto-native",
+    "psychographics": "Early adopters, meme enthusiasts, community-oriented, risk-tolerant",
+    "behaviors": "Active on Discord/Twitter, NFT collectors, DeFi participants",
+    "painPoints": "Tired of serious crypto projects, want fun + value, seek authentic community"
+  },
+
+  "competitivePositioning": {
+    "category": "Memecoin-culture NFT project",
+    "differentiation": "Unapologetically bold testicular theme with genuine utility and team collaboration features",
+    "competitors": ["CryptoPunks (too serious)", "Bored Apes (overdone)", "Pudgy Penguins (too cute)"],
+    "advantage": "Perfect balance of humor, community, and enterprise value proposition"
+  },
+
+  "generatedAt": "2025-12-06T00:00:00Z",
+  "generationPlatform": "MACHUPS - AI-Powered Brand Generation",
+  "eventContext": "Monad Blitz SF #18 Demo"
+}

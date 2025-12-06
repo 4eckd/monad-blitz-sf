@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GONADS - Badge Logo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #0F172A;
+    }
+
+    .logo-badge {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      background: linear-gradient(135deg, #9333EA 0%, #14B8A6 100%);
+      border-radius: 50%;
+      box-shadow:
+        0 20px 60px rgba(147, 51, 234, 0.4),
+        0 0 0 8px rgba(147, 51, 234, 0.2),
+        0 0 0 16px rgba(20, 184, 166, 0.1);
+      animation: rotate 20s linear infinite;
+    }
+
+    .badge-inner {
+      position: relative;
+      width: 260px;
+      height: 260px;
+      background: #0F172A;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .badge-icon {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      margin-bottom: 16px;
+    }
+
+    .badge-circle-1 {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #9333EA 0%, #7C3AED 100%);
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+      box-shadow: 0 0 20px rgba(147, 51, 234, 0.8);
+    }
+
+    .badge-circle-2 {
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%);
+      border-radius: 50%;
+      bottom: 0;
+      right: 0;
+      box-shadow: 0 0 20px rgba(20, 184, 166, 0.8);
+    }
+
+    .badge-connector {
+      position: absolute;
+      width: 3px;
+      height: 60px;
+      background: linear-gradient(180deg, #9333EA 0%, #14B8A6 100%);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+      border-radius: 2px;
+    }
+
+    .badge-text {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 48px;
+      font-weight: 900;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #9333EA 0%, #14B8A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+      margin: 0;
+      line-height: 1;
+    }
+
+    .badge-subtitle {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      color: #64748B;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin: 0;
+    }
+
+    .badge-year {
+      position: absolute;
+      bottom: 24px;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #475569;
+      letter-spacing: 0.05em;
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* Light background variant */
+    .light-bg {
+      background: #F8FAFC;
+    }
+
+    .light-bg .badge-inner {
+      background: #FFFFFF;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-badge">
+    <div class="badge-inner">
+      <div class="badge-icon">
+        <div class="badge-circle-1"></div>
+        <div class="badge-circle-2"></div>
+        <div class="badge-connector"></div>
+      </div>
+      <h1 class="badge-text">GONADS</h1>
+      <p class="badge-subtitle">WEB3 NFT</p>
+      <p class="badge-year">EST. 2025</p>
+    </div>
+  </div>
+</body>
+</html>

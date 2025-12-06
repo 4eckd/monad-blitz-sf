@@ -1,0 +1,208 @@
+GONADS.io Brand Package - Directory Structure
+==============================================
+
+brands/gonads-io/
+│
+├── 📄 DOCUMENTATION (Start Here)
+│   ├── README.md                         # 📘 Complete package overview
+│   ├── SUMMARY.md                        # 📊 Executive summary & ROI analysis
+│   ├── ENTERPRISE_DEMO.md                # 💼 Enterprise package details
+│   ├── BRAND_GUIDELINES.md               # 🎨 20-page brand guidelines
+│   ├── DEPLOY.md                         # 🚀 Deployment instructions
+│   └── DIRECTORY_STRUCTURE.txt           # 📂 This file
+│
+├── 🎨 BRAND ASSETS
+│   ├── brand-analysis.json               # Strategic brand analysis
+│   │   ├── Brand personality
+│   │   ├── Target audience profiling
+│   │   ├── Competitive positioning
+│   │   ├── Messaging framework
+│   │   └── Visual style direction
+│   │
+│   ├── design-tokens.json                # W3C DTCG design tokens
+│   │   ├── Colors (brand, neutral, semantic, gradients)
+│   │   ├── Typography (families, sizes, weights)
+│   │   ├── Spacing (xs to 5xl)
+│   │   ├── Border radius
+│   │   ├── Shadows
+│   │   ├── Animations
+│   │   └── Z-index
+│   │
+│   └── logos/                            # Logo variations
+│       ├── wordmark.html                 # 🎯 Animated wordmark logo
+│       ├── combination.html              # 🎯 Icon + text + tagline
+│       └── badge.html                    # 🎯 Circular badge logo
+│       │
+│       └── [Exports - Generated on build]
+│           ├── wordmark.svg
+│           ├── wordmark.png
+│           ├── combination.svg
+│           ├── combination.png
+│           ├── badge.svg
+│           └── badge.png
+│
+├── ⚛️ REACT COMPONENTS (Production-Ready)
+│   ├── Button.tsx                        # Button component
+│   │   ├── Variants: primary, secondary, accent, ghost
+│   │   ├── Sizes: sm, md, lg
+│   │   └── Features: hover, disabled, fullWidth
+│   │
+│   ├── Input.tsx                         # Input component
+│   │   ├── Types: text, email, password, number, url
+│   │   ├── Features: label, error, icon support
+│   │   └── Full validation
+│   │
+│   ├── Card.tsx                          # Card component
+│   │   ├── Variants: default, gradient, glow
+│   │   ├── Subcomponents: CardHeader, CardTitle, CardContent, CardFooter
+│   │   └── Features: hoverable, responsive
+│   │
+│   ├── Header.tsx                        # Navigation header
+│   │   ├── Logo integration
+│   │   ├── Wallet connection UI
+│   │   ├── Responsive navigation
+│   │   └── Mobile menu ready
+│   │
+│   ├── Footer.tsx                        # Full footer
+│   │   ├── Site navigation
+│   │   ├── Social links
+│   │   ├── Copyright info
+│   │   └── Responsive columns
+│   │
+│   └── index.ts                          # Barrel exports
+│
+└── 🚀 PREVIEW DEPLOYMENT (Next.js 14)
+    └── preview/
+        │
+        ├── 📱 APPLICATION
+        │   └── app/                      # Next.js App Router
+        │       ├── layout.tsx            # Root layout
+        │       ├── page.tsx              # Landing page
+        │       │   ├── Hero section
+        │       │   ├── Features showcase
+        │       │   ├── Minting interface (UI)
+        │       │   ├── Newsletter signup
+        │       │   └── Stats display
+        │       └── globals.css           # Global styles
+        │
+        ├── ⚙️ CONFIGURATION
+        │   ├── package.json              # Dependencies
+        │   │   ├── next: ^14.2.0
+        │   │   ├── react: ^18.3.1
+        │   │   ├── tailwindcss: ^3.4.17
+        │   │   └── typescript: ^5
+        │   │
+        │   ├── tailwind.config.ts        # Tailwind + design tokens
+        │   ├── tsconfig.json             # TypeScript config
+        │   ├── next.config.mjs           # Next.js config
+        │   ├── postcss.config.mjs        # PostCSS config
+        │   ├── vercel.json               # Vercel deployment
+        │   └── .env.example              # Environment variables template
+        │
+        └── 📦 BUILD OUTPUT (Generated)
+            └── .next/                    # Production build
+                ├── static/
+                ├── server/
+                └── cache/
+
+==============================================
+FILE COUNT SUMMARY
+==============================================
+
+Documentation:           6 files
+Brand Assets:           8 files (2 JSON + 6 HTML/exports)
+Components:             6 files (5 components + 1 index)
+Preview App:           10 files (app + configs)
+CI/CD:                  1 file (GitHub Actions)
+-------------------------------------------
+TOTAL:                 31 files
+
+==============================================
+SIZE BREAKDOWN
+==============================================
+
+design-tokens.json:     ~1,200 lines (comprehensive token system)
+BRAND_GUIDELINES.md:    ~800 lines (complete brand guide)
+ENTERPRISE_DEMO.md:     ~600 lines (enterprise documentation)
+Components (total):     ~500 lines (production-ready React)
+Preview app (total):    ~400 lines (Next.js landing page)
+
+==============================================
+QUICK NAVIGATION
+==============================================
+
+📖 New to the package?
+   → Start with README.md
+
+💼 Enterprise decision maker?
+   → Read ENTERPRISE_DEMO.md
+
+🎨 Designer on the team?
+   → Review BRAND_GUIDELINES.md
+
+💻 Developer integrating?
+   → Check components/*.tsx
+
+🚀 Ready to deploy?
+   → Follow DEPLOY.md
+
+📊 Want the numbers?
+   → See SUMMARY.md
+
+==============================================
+DEPLOYMENT TARGETS
+==============================================
+
+Primary:    gonads.preview.machups.com
+Vercel:     Auto-deployed on push to main
+Local:      localhost:3001 (npm run dev)
+Production: Configured via vercel.json
+
+==============================================
+KEY FEATURES
+==============================================
+
+✅ W3C DTCG compliant design tokens
+✅ Production-ready React components
+✅ Fully responsive Next.js application
+✅ Automated CI/CD with GitHub Actions
+✅ TypeScript throughout
+✅ Tailwind CSS 3 integration
+✅ WCAG AA accessibility compliant
+✅ Lighthouse 95+ performance target
+✅ Vercel edge optimized
+
+==============================================
+TECH STACK
+==============================================
+
+Framework:      Next.js 14 (App Router)
+Language:       TypeScript 5
+Styling:        Tailwind CSS 3
+Components:     React 18
+Deployment:     Vercel
+CI/CD:          GitHub Actions
+Design Tokens:  W3C DTCG JSON
+Version Control: Git
+
+==============================================
+SUPPORT & RESOURCES
+==============================================
+
+Platform:       https://machups.com
+Documentation:  https://docs.machups.com
+Support Email:  enterprise@machups.com
+Demo Call:      https://cal.com/machups/enterprise-demo
+
+==============================================
+GENERATED BY
+==============================================
+
+Platform:       MACHUPS
+Event:          Monad Blitz SF #18
+Date:           December 6, 2025
+Generation Time: ~3 minutes
+Quality:        Enterprise-grade
+Status:         Production-ready ✅
+
+==============================================

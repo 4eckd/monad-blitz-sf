@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GONADS - Wordmark Logo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #0F172A;
+    }
+
+    .logo-wordmark {
+      position: relative;
+      display: inline-block;
+    }
+
+    .logo-text {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-size: 120px;
+      font-weight: 900;
+      letter-spacing: -0.05em;
+      background: linear-gradient(135deg, #9333EA 0%, #14B8A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-transform: uppercase;
+      position: relative;
+      display: inline-block;
+      padding: 20px 0;
+      margin: 0;
+    }
+
+    .logo-text::before {
+      content: 'GONADS';
+      position: absolute;
+      top: 20px;
+      left: 0;
+      background: linear-gradient(135deg, #F97316 0%, #9333EA 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      filter: blur(20px);
+      opacity: 0.6;
+      z-index: -1;
+    }
+
+    .logo-dot {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      background: linear-gradient(135deg, #9333EA 0%, #14B8A6 100%);
+      border-radius: 50%;
+      margin-left: 8px;
+      vertical-align: middle;
+      box-shadow: 0 0 20px rgba(147, 51, 234, 0.8);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+      50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+      }
+    }
+
+    /* Light background variant */
+    .light-bg {
+      background: #F8FAFC;
+    }
+
+    .light-bg .logo-text {
+      background: linear-gradient(135deg, #9333EA 0%, #14B8A6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-wordmark">
+    <h1 class="logo-text">
+      GONADS<span class="logo-dot"></span>
+    </h1>
+  </div>
+</body>
+</html>
