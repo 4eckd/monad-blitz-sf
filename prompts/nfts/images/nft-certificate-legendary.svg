@@ -1,15 +1,17 @@
 <svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!--
-    MACHUPS NFT Certificate - COMMON Tier
-    ======================================
-    Rarity: COMMON (60% probability)
-    Colors: Cyber Mint Green / Circuit Cyan / Terminal Lime
+    MACHUPS NFT Certificate - LEGENDARY Tier
+    =========================================
+    Rarity: LEGENDARY (2.5% probability)
+    Colors: Blacklight Void Fire / Forbidden Spectrum / Entropy Core Radiance
 
-    Primary:   #00FFA3 (Cyber Mint)
-    Secondary: #00FFCC (Electric Aqua)
-    Accent:    #7FFFD4 (Digital Seafoam)
-    Shadow:    #004D3D (Deep Circuit)
-    Glow:      #B3FFE6 (Mint Haze)
+    Primary:   #9D00FF
+    Secondary: #FF0099
+    Tertiary:  #00FFFF
+    Accent:    #FF6600
+    Shadow:    #000000
+    Glow:      #FFFFFF
+    Highlight: #FFD700
   -->
 
   <!-- Background -->
@@ -18,20 +20,21 @@
   <!-- Gradient Definitions -->
   <defs>
     <linearGradient id="gradient-bg" x1="0" y1="0" x2="1200" y2="1200" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#004D3D"/>
-      <stop offset="50%" stop-color="#002A23"/>
-      <stop offset="100%" stop-color="#004D3D"/>
+      <stop offset="0%" stop-color="#000000"/>
+      <stop offset="50%" stop-color="#1a0033"/>
+      <stop offset="100%" stop-color="#000000"/>
     </linearGradient>
 
     <linearGradient id="gradient-accent" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#00FFA3"/>
-      <stop offset="50%" stop-color="#7FFFD4"/>
-      <stop offset="100%" stop-color="#00FFA3"/>
+      <stop offset="0%" stop-color="#9D00FF"/>
+      <stop offset="33%" stop-color="#FF0099"/>
+      <stop offset="66%" stop-color="#00FFFF"/>
+      <stop offset="100%" stop-color="#9D00FF"/>
     </linearGradient>
 
     <radialGradient id="gradient-logo-glow" cx="0.5" cy="0.5" r="0.5">
-      <stop offset="0%" stop-color="#00FFA3" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#00FFA3" stop-opacity="0"/>
+      <stop offset="0%" stop-color="#FFD700" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#9D00FF" stop-opacity="0"/>
     </radialGradient>
 
     <filter id="glow">
@@ -45,13 +48,13 @@
 
   <!-- Decorative Border -->
   <rect x="40" y="40" width="1120" height="1120" rx="20" stroke="url(#gradient-accent)" stroke-width="4" fill="none"/>
-  <rect x="60" y="60" width="1080" height="1080" rx="10" stroke="#004D3D" stroke-width="2" fill="none" opacity="0.5"/>
+  <rect x="60" y="60" width="1080" height="1080" rx="10" stroke="#FFD700" stroke-width="2" fill="none" opacity="0.5"/>
 
   <!-- Event Logo / Badge -->
   <g id="event-badge" transform="translate(600, 150)">
     <!-- Background glow -->
     <circle cx="0" cy="0" r="80" fill="url(#gradient-logo-glow)" opacity="0.3"/>
-    <circle cx="0" cy="0" r="60" fill="#002A23" filter="url(#glow)" opacity="0.8"/>
+    <circle cx="0" cy="0" r="60" fill="#000000" filter="url(#glow)" opacity="0.8"/>
 
     <!-- Monad Logomark -->
     <g transform="translate(-45, -46) scale(0.495)">
@@ -72,7 +75,7 @@
   </text>
 
   <!-- Subtitle -->
-  <text x="600" y="370" font-family="'Roboto Mono', 'Inter', monospace" font-size="20" font-weight="500" fill="#B3FFE6" text-anchor="middle" letter-spacing="0.1em">
+  <text x="600" y="370" font-family="'Roboto Mono', 'Inter', monospace" font-size="20" font-weight="500" fill="#FFD700" text-anchor="middle" letter-spacing="0.1em">
     MACHUPS.COM
   </text>
 
@@ -85,8 +88,8 @@
     </defs>
 
     <!-- Background border -->
-    <rect width="750" height="394" rx="12" fill="#002A23" stroke="#00FFA3" stroke-width="3" opacity="0.8"/>
-    <rect width="750" height="394" rx="12" fill="none" stroke="#B3FFE6" stroke-width="1" opacity="0.3"/>
+    <rect width="750" height="394" rx="12" fill="#000000" stroke="#9D00FF" stroke-width="3" opacity="0.8"/>
+    <rect width="750" height="394" rx="12" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.3"/>
 
     <!-- Embedded screenshot image -->
     <image
@@ -100,7 +103,7 @@
       opacity="0.95"/>
 
     <!-- Fallback text -->
-    <text x="375" y="197" font-family="'Roboto Mono', monospace" font-size="18" fill="#00FFA3" text-anchor="middle" letter-spacing="0.1em" opacity="0.3">
+    <text x="375" y="197" font-family="'Roboto Mono', monospace" font-size="18" fill="#9D00FF" text-anchor="middle" letter-spacing="0.1em" opacity="0.3">
       BRAND PREVIEW
     </text>
   </g>
@@ -111,12 +114,12 @@
   </text>
 
   <!-- Subdomain -->
-  <text id="subdomain" x="600" y="940" font-family="'Roboto Mono', monospace" font-size="22" font-weight="500" fill="#00FFA3" text-anchor="middle" letter-spacing="0.05em">
+  <text id="subdomain" x="600" y="940" font-family="'Roboto Mono', monospace" font-size="22" font-weight="500" fill="#9D00FF" text-anchor="middle" letter-spacing="0.05em">
     brand.machups.com
   </text>
 
   <!-- Generation Date -->
-  <text id="generation-date" x="600" y="990" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="400" fill="#B3FFE6" text-anchor="middle" opacity="0.8">
+  <text id="generation-date" x="600" y="990" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="400" fill="#00FFFF" text-anchor="middle" opacity="0.8">
     Generated December 6, 2025
   </text>
 
@@ -141,8 +144,8 @@
     </g>
 
     <!-- Tier Info (Center) -->
-    <text x="0" y="0" font-family="'Roboto Mono', monospace" font-size="14" font-weight="600" fill="#00FFA3" text-anchor="middle" letter-spacing="0.15em">
-      TIER: COMMON • 60% PROBABILITY
+    <text x="0" y="0" font-family="'Roboto Mono', monospace" font-size="14" font-weight="600" fill="#FF6600" text-anchor="middle" letter-spacing="0.15em">
+      TIER: LEGENDARY • 2.5% PROBABILITY
     </text>
 
     <!-- Thirdweb Logo (Right) -->
@@ -153,7 +156,7 @@
     </g>
 
     <!-- Footer Text -->
-    <text x="0" y="35" font-family="'Roboto Mono', monospace" font-size="13" font-weight="500" fill="#B3FFE6" text-anchor="middle" letter-spacing="0.1em" opacity="0.7">
+    <text x="0" y="35" font-family="'Roboto Mono', monospace" font-size="13" font-weight="500" fill="#00FFFF" text-anchor="middle" letter-spacing="0.1em" opacity="0.7">
       MACHUPS.COM • POWERED BY MONAD
     </text>
   </g>
