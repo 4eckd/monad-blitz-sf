@@ -29,7 +29,9 @@
       "Bash(grep:*)",
       "Bash(npx @figma-export/cli:*)",
       "Bash(chmod:*)",
-      "Bash(git pull:*)"
+      "Bash(git pull:*)",
+      "Bash(pip install:*)",
+      "Bash(modal:*)"
     ],
     "deny": [],
     "ask": []

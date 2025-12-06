@@ -102,3 +102,14 @@ broadcast/
 # Foundry
 out/
 cache_hardhat/
+
+# Modal
+.modal/
+*.modal-config
+modal-logs/
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+*.so
+.Python
