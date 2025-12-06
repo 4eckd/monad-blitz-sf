@@ -1,20 +1,49 @@
 {
-  "name": "monad-blitz-sf",
-  "version": "0.1.0",
+  "name": "machups",
+  "version": "1.0.0",
+  "description": "AI-powered brand generation platform - Monad Blitz SF #18",
   "private": true,
+  "author": "Fused Gaming Development Team",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4eckd/monad-blitz-sf.git"
+  },
+  "keywords": [
+    "ai",
+    "branding",
+    "design-system",
+    "design-tokens",
+    "monad",
+    "blockchain",
+    "nft",
+    "web3",
+    "claude-ai",
+    "nextjs"
+  ],
   "packageManager": "pnpm@9.0.0",
+  "engines": {
+    "node": ">=18.0.0",
+    "pnpm": ">=9.0.0"
+  },
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "type-check": "tsc --noEmit",
+    "test": "echo \"Tests coming soon\"",
     "update-docs": "node scripts/update-docs.js",
-    "prepare": "node scripts/setup-hooks.js"
+    "prepare": "node scripts/setup-hooks.js",
+    "docs:dev": "cd website && pnpm run start",
+    "docs:build": "cd website && pnpm run build",
+    "docs:deploy": "cd website && vercel --prod"
   },
   "dependencies": {
     "@web3icons/react": "^4.1.4",
     "framer-motion": "^12.23.25",
     "lucide-react": "^0.555.0",
+    "modal": "^0.5.6",
     "next": "^15.1.0",
     "puppeteer": "^23.11.1",
     "react": "^19.0.0",

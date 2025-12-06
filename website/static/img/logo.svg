@@ -10,6 +10,4 @@
   <!-- Modern "M" Shape -->
   <path d="M8 38V10L18 22L24 10L30 22L40 10V38H34V20L24 32L14 20V38H8Z" fill="url(#logo-gradient)"/>
 
-  <!-- Accent dot -->
-  <circle cx="42" cy="12" r="3" fill="#6E54FF"/>
 </svg>

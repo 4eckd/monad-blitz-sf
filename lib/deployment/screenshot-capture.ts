@@ -3,7 +3,7 @@
  * Uses Puppeteer to capture high-quality screenshots for NFT metadata and previews
  */
 
-import puppeteer, { type Browser, type Page } from 'puppeteer';
+import puppeteer, { type Browser } from 'puppeteer';
 import type { ScreenshotConfig, ScreenshotMetadata } from './types';
 
 const DEFAULT_SCREENSHOT_CONFIG: ScreenshotConfig = {

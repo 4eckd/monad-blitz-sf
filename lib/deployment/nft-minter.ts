@@ -6,8 +6,7 @@
 import type {
   NFTMetadata,
   NFTMintResult,
-  NFTAttribute,
-  ScreenshotMetadata
+  NFTAttribute
 } from './types';
 
 /**
@@ -26,7 +25,7 @@ export interface IPFSUploadResult {
  */
 export async function uploadToIPFS(
   data: Buffer | string,
-  filename: string
+  _filename: string
 ): Promise<IPFSUploadResult> {
   // TODO: Implement actual IPFS upload using Pinata/NFT.Storage
   // This is a placeholder implementation
@@ -166,7 +165,7 @@ export async function mintCertificateNFT(
     );
 
     // Step 3: Upload metadata to IPFS
-    const metadataUpload = await uploadNFTMetadata(metadata);
+    await uploadNFTMetadata(metadata);
 
     // Step 4: Mint NFT using thirdweb
     // TODO: Implement actual minting with thirdweb SDK
@@ -231,7 +230,7 @@ export async function mintCertificateNFT(
  * Check NFT minting status
  */
 export async function checkMintingStatus(
-  txHash: string
+  _txHash: string
 ): Promise<'pending' | 'minted' | 'failed'> {
   // TODO: Implement actual blockchain transaction status check
   /*
@@ -256,8 +255,8 @@ export async function checkMintingStatus(
  * Get NFT metadata from token ID
  */
 export async function getNFTMetadata(
-  contractAddress: string,
-  tokenId: string
+  _contractAddress: string,
+  _tokenId: string
 ): Promise<NFTMetadata | null> {
   // TODO: Implement actual NFT metadata retrieval
   /*

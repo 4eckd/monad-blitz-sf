@@ -3,6 +3,7 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 const sidebars: SidebarsConfig = {
   tutorialSidebar: [
     'intro',
+    'project-overview',
     {
       type: 'category',
       label: 'Getting Started',
@@ -16,6 +17,14 @@ const sidebars: SidebarsConfig = {
         'features/design-tokens',
         'features/components',
         'features/nft-certificates'
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Event Roadmap',
+      items: [
+        'planning/event-plan',
+        'planning/architecture',
       ],
     },
     {

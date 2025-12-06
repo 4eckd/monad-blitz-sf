@@ -41,6 +41,9 @@ Built for **Monad Blitz SF #18** | Deployed at [app.machups.com](https://app.mac
 
 **MACHUPS** is an AI-powered platform that generates complete, professional brand packages in under 3 minutes. Perfect for startups, founders, and designers who need instant branding without weeks of work or thousands in costs.
 
+**Event:** Monad Blitz SF #18 | **Date:** December 6, 2025 | **Duration:** 11 hours
+**Team:** Fused Gaming Development | **Demo Time:** 3 minutes
+
 ### What You Get
 
 🎨 **Visual Identity**
@@ -86,13 +89,27 @@ Built for **Monad Blitz SF #18** | Deployed at [app.machups.com](https://app.mac
 
 ---
 
+## Project Status
+
+**Pre-Event:** ✅ Complete
+- Repository initialized
+- Documentation complete
+- Tech stack configured
+- Planning documents ready
+
+**Event Day (Dec 6):** 🚀 Ready to Build
+- Core generation pipeline
+- Blockchain integration
+- UI/UX implementation
+- Production deployment
+
 ## Quick Start
 
 ### Prerequisites
 
 - Node.js 18+
-- pnpm 9.x
-- API keys (Claude, DALL-E/SD, Penpot, Monad wallet)
+- pnpm 9.0.0+
+- API keys (Claude, thirdweb, Monad wallet)
 
 ### Installation
 
@@ -121,25 +138,37 @@ Create a `.env.local` file with:
 ```bash
 # AI Services
 ANTHROPIC_API_KEY=sk-ant-xxxxx
-OPENAI_API_KEY=sk-xxxxx (optional, for DALL-E)
-STABILITY_API_KEY=sk-xxxxx (optional, for Stable Diffusion)
-
-# Design Tools
-PENPOT_ACCESS_TOKEN=xxxxx
-
-# Deployment
-CLOUDFLARE_API_TOKEN=xxxxx
-CLOUDFLARE_ACCOUNT_ID=xxxxx
 
 # Blockchain (Monad)
-NEXT_PUBLIC_MONAD_RPC_URL=https://testnet-rpc.monad.xyz
-NEXT_PUBLIC_MONAD_CHAIN_ID=10143
+NEXT_PUBLIC_THIRDWEB_CLIENT_ID=xxxxx
 THIRDWEB_SECRET_KEY=xxxxx
+NEXT_PUBLIC_NFT_CONTRACT_ADDRESS=0x...
+NEXT_PUBLIC_MONAD_RPC_URL=https://rpc.monad.xyz
+NEXT_PUBLIC_MONAD_CHAIN_ID=10143
+
+# Storage
+REDIS_URL=redis://...
+R2_BUCKET_NAME=machups-brands
+R2_ACCESS_KEY_ID=xxxxx
+R2_SECRET_ACCESS_KEY=xxxxx
 
 # Application
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NODE_ENV=development
 ```
+
+---
+
+## Multi-Site Architecture
+
+MACHUPS consists of 4 interconnected sites:
+
+| Site | Purpose | Status |
+|------|---------|--------|
+| [app.machups.com](https://app.machups.com) | Main brand generation app | 🚧 Building |
+| [docs.machups.com](https://docs.machups.com) | Project documentation | ✅ Live |
+| [design.machups.com](https://design.machups.com) | Design system showcase | 📋 Planned |
+| [wallet.machups.com](https://wallet.machups.com) | NFT certificate manager | 📋 Planned |
 
 ---
 
@@ -156,9 +185,10 @@ User Input → AI Analysis → Parallel Generation → Complete Brand Package
 ```
 
 **Generation Time:** < 3 minutes
-**Components:** 7+ React components
+**Components:** 30+ React components
 **Documentation:** Full Docusaurus site
-**Deliverables:** 15+ files
+**Deliverables:** 20+ files
+**NFT:** Commemorative certificate on Monad
 
 ### 2. MCP Integrations
 

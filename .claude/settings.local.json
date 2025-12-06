@@ -24,7 +24,10 @@
       "Bash(unset:*)",
       "Bash(VERCEL_ORG_ID=team_htUXlE6aixhhmBuybRXvhe8S VERCEL_PROJECT_ID=prj_pVv7IcDUYnOUPG0TBCi268pgw6l1 vercel:*)",
       "Bash(gh run list:*)",
-      "Bash(curl:*)"
+      "Bash(curl:*)",
+      "Bash(wc:*)",
+      "Bash(grep:*)",
+      "Bash(npx @figma-export/cli:*)"
     ],
     "deny": [],
     "ask": []

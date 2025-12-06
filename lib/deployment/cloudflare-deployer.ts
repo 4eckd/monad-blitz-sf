@@ -29,12 +29,13 @@ interface CloudflareAPIDeploymentResponse {
   created_on: string;
 }
 
-interface CloudflareAPIResponse<T> {
-  result: T;
-  success: boolean;
-  errors: Array<{ code: number; message: string }>;
-  messages: string[];
-}
+// Unused - can be removed or used for future API response typing
+// interface CloudflareAPIResponse<T> {
+//   result: T;
+//   success: boolean;
+//   errors: Array<{ code: number; message: string }>;
+//   messages: string[];
+// }
 
 /**
  * Cloudflare Pages Deployer Class
@@ -224,11 +225,11 @@ export class CloudflareDeployer {
     }
 
     try {
-      const result = await this.makeRequest<any>(
+      const result = await this.makeRequest<Array<{hosts: string[]; status: string}>>(
         `/zones/${this.zoneId}/ssl/certificate_packs`
       );
 
-      const cert = result.find((c: any) =>
+      const cert = result.find((c) =>
         c.hosts.includes(hostname)
       );
 
