@@ -62,7 +62,14 @@ Phase 3-6 (Future):    ░░░░░░░░░░░░░░░░   0% ⏳
 - Next.js integration guide
 - Complete documentation
 
-###Commits
+**Merge Queue (NEW - Just Configured):**
+- GitHub Actions workflow for automated merging
+- Branch protection rules template
+- CI/CD pipeline integration
+- Complete setup guide
+- See [.github/MERGE_QUEUE_SETUP.md](.github/MERGE_QUEUE_SETUP.md)
+
+### Recent Commits
 
 1. **Commit e55541c** - Modal serverless GPU integration
    - `modal_functions/` directory with brand generation functions
