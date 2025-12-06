@@ -198,33 +198,27 @@ export class BrandOrchestrator extends EventEmitter {
    * Phase 1: Brand Analysis using Claude AI
    */
   private async analyzeBrand(input: BrandGenerationInput): Promise<any> {
-    // This will use Claude AI to analyze the business idea
-    // For now, return a mock structure
-    const { businessIdea, targetAudience, style, industry } = input;
+    // Use Claude AI to analyze the business idea
+    const { businessIdea, targetAudience, style, industry, techStack } = input;
 
-    // TODO: Implement actual Claude AI integration
-    // const claude = new ClaudeClient(this.config.claudeApiKey);
-    // const analysis = await claude.analyzeBrand(input);
+    // Import Claude client dynamically to avoid circular dependencies
+    const { createClaudeClient } = await import('../ai/claude');
 
-    return {
-      brandName: this.extractBrandName(businessIdea),
-      tagline: this.generateTagline(businessIdea),
-      colors: {
-        primary: style === 'bold' ? '#9333EA' : '#3B82F6',
-        secondary: style === 'bold' ? '#14B8A6' : '#10B981',
-        accent: '#F97316',
-      },
-      typography: {
-        headingFont: 'Inter',
-        bodyFont: 'Inter',
-        monoFont: 'JetBrains Mono',
-      },
-      personality: this.generatePersonality(style),
-      messaging: {
-        voiceTone: 'Professional yet approachable',
-        keyMessages: [],
-      },
-    };
+    // Create Claude client
+    const claude = createClaudeClient({
+      apiKey: this.config.claudeApiKey,
+    });
+
+    // Analyze brand with Claude AI
+    const analysis = await claude.analyzeBrand({
+      businessIdea,
+      targetAudience,
+      style,
+      industry,
+      techStack,
+    });
+
+    return analysis;
   }
 
   /**
