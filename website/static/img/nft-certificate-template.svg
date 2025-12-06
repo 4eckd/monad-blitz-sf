@@ -1,0 +1,170 @@
+<svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!--
+    MACHUPS NFT Certificate Template
+    ================================
+
+    Monad Brand Guidelines Applied:
+    - Primary Purple: #6E54FF
+    - Light Purple: #DDD7FE
+    - Dark Navy: #0E091C
+    - Typography: Britti Sans (headlines), Inter (body), Roboto Mono (labels/code)
+    - Logo: Official Monad logomark embedded from @public/Logomark.svg
+
+    Brand Kit: https://www.monad.xyz/brand-and-media-kit
+
+    Dynamic Elements (replaced at runtime):
+    - #brand-name: Brand name text
+    - #subdomain: Deployment subdomain
+    - #generation-date: Generation timestamp
+    - #screenshot-container: Brand preview screenshot (embedded image)
+
+    Certificate Size: 1200x1200px (optimal for NFT metadata)
+  -->
+
+  <!-- Background -->
+  <rect width="1200" height="1200" fill="url(#gradient-bg)"/>
+
+  <!-- Gradient Definitions -->
+  <defs>
+    <linearGradient id="gradient-bg" x1="0" y1="0" x2="1200" y2="1200" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0E091C"/>
+      <stop offset="50%" stop-color="#1a1228"/>
+      <stop offset="100%" stop-color="#0E091C"/>
+    </linearGradient>
+
+    <linearGradient id="gradient-accent" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6E54FF"/>
+      <stop offset="50%" stop-color="#DDD7FE"/>
+      <stop offset="100%" stop-color="#6E54FF"/>
+    </linearGradient>
+
+    <radialGradient id="gradient-logo-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#6E54FF" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#6E54FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="10" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Decorative Border -->
+  <rect x="40" y="40" width="1120" height="1120" rx="20" stroke="url(#gradient-accent)" stroke-width="4" fill="none"/>
+  <rect x="60" y="60" width="1080" height="1080" rx="10" stroke="#475569" stroke-width="2" fill="none" opacity="0.5"/>
+
+  <!-- Event Logo / Badge -->
+  <g id="event-badge" transform="translate(600, 150)">
+    <!-- Official Monad Logomark from @public/Logomark.svg -->
+    <!-- Background glow -->
+    <circle cx="0" cy="0" r="80" fill="url(#gradient-logo-glow)" opacity="0.3"/>
+    <circle cx="0" cy="0" r="60" fill="#0E091C" filter="url(#glow)" opacity="0.8"/>
+
+    <!-- Monad Logomark - Scaled and centered -->
+    <g transform="translate(-45, -46) scale(0.495)">
+      <svg width="182" height="184" viewBox="0 0 182 184" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90.5358 0C64.3911 0 0 65.2598 0 91.7593C0 118.259 64.3911 183.52 90.5358 183.52C116.681 183.52 181.073 118.258 181.073 91.7593C181.073 65.2609 116.682 0 90.5358 0ZM76.4273 144.23C65.4024 141.185 35.7608 88.634 38.7655 77.4599C41.7703 66.2854 93.62 36.2439 104.645 39.2892C115.67 42.3341 145.312 94.8846 142.307 106.059C139.302 117.234 87.4522 147.276 76.4273 144.23Z" fill="white"/>
+      </svg>
+    </g>
+  </g>
+
+  <!-- Event Title -->
+  <text x="600" y="250" font-family="'Britti Sans', 'Inter', system-ui, sans-serif" font-size="32" font-weight="700" fill="url(#gradient-accent)" text-anchor="middle" letter-spacing="0.05em">
+    MONAD BLITZ SF #18
+  </text>
+
+  <!-- Certificate Title -->
+  <text x="600" y="320" font-family="'Britti Sans', 'Inter', system-ui, sans-serif" font-size="56" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-0.02em">
+    BRAND CERTIFICATE
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="370" font-family="'Roboto Mono', 'Inter', monospace" font-size="20" font-weight="500" fill="#DDD7FE" text-anchor="middle" letter-spacing="0.1em">
+    GENERATED WITH MACHUPS AI
+  </text>
+
+  <!-- Screenshot Placeholder (will be replaced with actual screenshot) -->
+  <g id="screenshot-container" transform="translate(225, 420)">
+    <defs>
+      <clipPath id="screenshot-clip">
+        <rect width="750" height="394" rx="12"/>
+      </clipPath>
+    </defs>
+
+    <!-- Background border -->
+    <rect width="750" height="394" rx="12" fill="#0E091C" stroke="#6E54FF" stroke-width="3" opacity="0.8"/>
+    <rect width="750" height="394" rx="12" fill="none" stroke="#DDD7FE" stroke-width="1" opacity="0.3"/>
+
+    <!-- Embedded brand screenshot image -->
+    <image
+      href="image.png"
+      x="0"
+      y="0"
+      width="750"
+      height="394"
+      preserveAspectRatio="xMidYMin slice"
+      clip-path="url(#screenshot-clip)"
+      opacity="0.95"/>
+
+    <!-- Fallback text (shown if image doesn't load) -->
+    <text x="375" y="197" font-family="'Roboto Mono', monospace" font-size="18" fill="#6E54FF" text-anchor="middle" letter-spacing="0.1em" opacity="0.3">
+      BRAND SCREENSHOT
+    </text>
+  </g>
+
+  <!-- Brand Name (Dynamic) -->
+  <text id="brand-name" x="600" y="890" font-family="'Britti Sans', 'Inter', system-ui, sans-serif" font-size="52" font-weight="700" fill="white" text-anchor="middle" letter-spacing="-0.01em">
+    MACHUPS.COM
+  </text>
+
+  <!-- Subdomain -->
+  <text id="subdomain" x="600" y="940" font-family="'Roboto Mono', monospace" font-size="22" font-weight="500" fill="#6E54FF" text-anchor="middle" letter-spacing="0.05em">
+    brand.machups.com
+  </text>
+
+  <!-- Generation Date -->
+  <text id="generation-date" x="600" y="990" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="400" fill="#DDD7FE" text-anchor="middle" opacity="0.8">
+    Generated December 6, 2025
+  </text>
+
+  <!-- Footer Info -->
+  <g id="footer" transform="translate(600, 1050)">
+    <text x="0" y="0" font-family="'Roboto Mono', monospace" font-size="14" font-weight="600" fill="#6E54FF" text-anchor="middle" letter-spacing="0.15em">
+      SAN FRANCISCO • CALIFORNIA • USA
+    </text>
+    <text x="0" y="30" font-family="'Roboto Mono', monospace" font-size="13" font-weight="500" fill="#DDD7FE" text-anchor="middle" letter-spacing="0.1em" opacity="0.7">
+      MACHUPS.COM • POWERED BY MONAD
+    </text>
+  </g>
+
+  <!-- Decorative Elements -->
+  <g id="decorative-lines">
+    <!-- Top accent lines -->
+    <line x1="300" y1="380" x2="500" y2="380" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
+    <line x1="700" y1="380" x2="900" y2="380" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
+
+    <!-- Bottom accent lines -->
+    <line x1="300" y1="1010" x2="500" y2="1010" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
+    <line x1="700" y1="1010" x2="900" y2="1010" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <!-- Corner Decorations -->
+  <g id="corner-top-left" transform="translate(80, 80)">
+    <path d="M 0 20 L 0 0 L 20 0" stroke="url(#gradient-accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g id="corner-top-right" transform="translate(1120, 80) scale(-1, 1)">
+    <path d="M 0 20 L 0 0 L 20 0" stroke="url(#gradient-accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g id="corner-bottom-left" transform="translate(80, 1120) scale(1, -1)">
+    <path d="M 0 20 L 0 0 L 20 0" stroke="url(#gradient-accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <g id="corner-bottom-right" transform="translate(1120, 1120) scale(-1, -1)">
+    <path d="M 0 20 L 0 0 L 20 0" stroke="url(#gradient-accent)" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+</svg>
