@@ -29,6 +29,11 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'Workflows',
+      items: ['workflows/diagrams'],
+    },
+    {
+      type: 'category',
       label: 'API Reference',
       items: ['api/overview'],
     },

@@ -433,11 +433,11 @@ describe('Full Generation Pipeline', () => {
 Phase 2 is complete when:
 
 ### Performance
-- [ ] Brand analysis completes in <30s
-- [ ] Logo generation completes in <45s
-- [ ] Token generation completes in <15s
-- [ ] Component generation completes in <60s
-- [ ] **Full pipeline completes in <3 minutes**
+- [ ] Brand analysis completes in `<30s`
+- [ ] Logo generation completes in `<45s`
+- [ ] Token generation completes in `<15s`
+- [ ] Component generation completes in `<60s`
+- [ ] **Full pipeline completes in `<3 minutes`**
 
 ### Quality
 - [ ] All exports are production-ready
@@ -583,7 +583,7 @@ Phase 2 is **DONE** when:
 3. ✅ All tests passing (100% coverage on critical paths)
 4. ✅ Documentation complete and deployed
 5. ✅ Demo working end-to-end
-6. ✅ Performance <3 minutes validated
+6. ✅ Performance `<3 minutes` validated
 7. ✅ WCAG AA compliance verified
 8. ✅ Tagged as v1.2.0
 9. ✅ Changelog updated
