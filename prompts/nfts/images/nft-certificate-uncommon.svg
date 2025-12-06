@@ -1,10 +1,10 @@
 <svg width="1200" height="1200" viewBox="0 0 1200 1200" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!--
-    FUSED GAMING NFT Certificate - UNCOMMON Tier
-    =============================================
+    MACHUPS NFT Certificate - UNCOMMON Tier
+    ========================================
     Rarity: UNCOMMON (20% probability)
     Colors: Neon Magenta / Ultraviolet Blue / Acid × Magenta Dual-Tone
-    
+
     Primary:   #FF00FF (Pure Magenta)
     Secondary: #FF0080 (Hot Pink Pulse)
     Accent:    #FF66FF (Soft Neon)
@@ -68,12 +68,12 @@
 
   <!-- Certificate Title -->
   <text x="600" y="320" font-family="'Britti Sans', 'Inter', system-ui, sans-serif" font-size="56" font-weight="800" fill="white" text-anchor="middle" letter-spacing="-0.02em">
-   MACHUPS.COM BRAND CERTIFICATE
+    BRAND CERTIFICATE
   </text>
 
   <!-- Subtitle -->
   <text x="600" y="370" font-family="'Roboto Mono', 'Inter', monospace" font-size="20" font-weight="500" fill="#FFCCFF" text-anchor="middle" letter-spacing="0.1em">
-    BY FUSED GAMING
+    WITH FOUNDERS.INC
   </text>
 
   <!-- Screenshot Placeholder -->
@@ -101,39 +101,24 @@
 
     <!-- Fallback text -->
     <text x="375" y="197" font-family="'Roboto Mono', monospace" font-size="18" fill="#FF00FF" text-anchor="middle" letter-spacing="0.1em" opacity="0.3">
-      CARD PREVIEW
+      BRAND PREVIEW
     </text>
   </g>
 
   <!-- Brand Name -->
   <text id="brand-name" x="600" y="890" font-family="'Britti Sans', 'Inter', system-ui, sans-serif" font-size="52" font-weight="700" fill="white" text-anchor="middle" letter-spacing="-0.01em">
-    SPONSORED BY MONAD.XYZ
-  </text>
-
-   <!-- Brand Name -->
-  <text id="brand-name" x="600" y="915" font-family="'Britti Sans', 'Inter', system-ui, sans-serif" font-size="36" font-weight="500" fill="white" text-anchor="middle" letter-spacing="-0.01em">
-    F.INC COINBASE THIRDWEB
+    [BRAND NAME]
   </text>
 
   <!-- Subdomain -->
   <text id="subdomain" x="600" y="940" font-family="'Roboto Mono', monospace" font-size="22" font-weight="500" fill="#FF00FF" text-anchor="middle" letter-spacing="0.05em">
-    NEON.MAG.002
+    brand.machups.com
   </text>
 
   <!-- Generation Date -->
   <text id="generation-date" x="600" y="990" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="400" fill="#FFCCFF" text-anchor="middle" opacity="0.8">
     Generated December 6, 2025
   </text>
-
-  <!-- Footer Info -->
-  <g id="footer" transform="translate(600, 1050)">
-    <text x="0" y="0" font-family="'Roboto Mono', monospace" font-size="14" font-weight="600" fill="#FF00FF" text-anchor="middle" letter-spacing="0.15em">
-      TIER: UNCOMMON • 20% PROBABILITY
-    </text>
-    <text x="0" y="30" font-family="'Roboto Mono', monospace" font-size="13" font-weight="500" fill="#FFCCFF" text-anchor="middle" letter-spacing="0.1em" opacity="0.7">
-      FUSED GAMING • MONAD BLITZ #18
-    </text>
-  </g>
 
   <!-- Decorative Elements -->
   <g id="decorative-lines">
@@ -144,6 +129,33 @@
     <!-- Bottom accent lines -->
     <line x1="300" y1="1010" x2="500" y2="1010" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
     <line x1="700" y1="1010" x2="900" y2="1010" stroke="url(#gradient-accent)" stroke-width="2" opacity="0.5"/>
+  </g>
+
+  <!-- Partner Logos and Tier Info -->
+  <g id="footer" transform="translate(600, 1035)">
+    <!-- Coinbase Logo (Left) -->
+    <g transform="translate(-420, -15)">
+      <svg width="80" height="14" viewBox="0 0 1101.64 196.79" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#FFFFFF" d="M222.34,54.94c-40.02,0-71.29,30.38-71.29,71.05s30.48,70.79,71.29,70.79c40.81,0,71.82-30.64,71.82-71.05 C294.16,85.58,263.68,54.94,222.34,54.94z M222.61,167.47c-22.79,0-39.49-17.7-39.49-41.47c0-24.04,16.43-41.73,39.22-41.73 c23.06,0,39.75,17.96,39.75,41.73S245.4,167.47,222.61,167.47z M302.9,85.85h19.88v108.3h31.8V57.58H302.9V85.85z M71.02,84.26 c16.7,0,29.95,10.3,34.98,25.62h33.66c-6.1-32.75-33.13-54.94-68.37-54.94C31.27,54.94,0,85.32,0,126s30.48,70.79,71.29,70.79 c34.45,0,62.01-22.19,68.11-55.21H106c-4.77,15.32-18.02,25.89-34.72,25.89c-23.06,0-39.22-17.7-39.22-41.47 C32.07,101.96,47.97,84.26,71.02,84.26z"/>
+      </svg>
+    </g>
+
+    <!-- Tier Info (Center) -->
+    <text x="0" y="0" font-family="'Roboto Mono', monospace" font-size="14" font-weight="600" fill="#FF00FF" text-anchor="middle" letter-spacing="0.15em">
+      TIER: UNCOMMON • 20% PROBABILITY
+    </text>
+
+    <!-- Thirdweb Logo (Right) -->
+    <g transform="translate(340, -15)">
+      <svg width="80" height="14" viewBox="0 0 142 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill="#fff" fill-rule="evenodd" d="M69.64 2.17a2.093 2.093 0 0 0-2.087 2.113 2.088 2.088 0 1 0 4.175 0c0-1.184-.94-2.113-2.087-2.113Zm1.837 5.271h-3.648V19.96h3.648V7.44ZM46.54 2.634h3.556v4.807h2.73v3.345h-2.73v4.412c0 .65.505 1.161 1.124 1.161h1.583v3.553H51.22c-2.57 0-4.68-2.113-4.68-4.737v-4.413h-1.65V7.418h1.651V2.634z" clip-rule="evenodd"/>
+      </svg>
+    </g>
+
+    <!-- Footer Text -->
+    <text x="0" y="35" font-family="'Roboto Mono', monospace" font-size="13" font-weight="500" fill="#FFCCFF" text-anchor="middle" letter-spacing="0.1em" opacity="0.7">
+      MACHUPS.COM • POWERED BY MONAD
+    </text>
   </g>
 
   <!-- Corner Decorations -->

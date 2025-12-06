@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Header, Footer, Card, CardHeader, CardTitle, CardContent, CardFooter, Button, Input } from '../components';
+import { Header, Footer, Card, CardHeader, CardTitle, CardContent, CardFooter, Button, Input } from '../../components';
 
 export default function GonadsPreview() {
   const [walletAddress, setWalletAddress] = useState<string>('');

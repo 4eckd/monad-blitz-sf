@@ -118,9 +118,13 @@ export class CloudflareDeployer {
 
     // Add files
     files.forEach((content, path) => {
-      const blob = content instanceof Buffer
-        ? new Blob([content])
-        : new Blob([content], { type: 'text/plain' });
+      let blobPart: BlobPart;
+      if (content instanceof Buffer) {
+        blobPart = new Uint8Array(content);
+      } else {
+        blobPart = content as string;
+      }
+      const blob = new Blob([blobPart], { type: content instanceof Buffer ? 'application/octet-stream' : 'text/plain' });
       formData.append(path, blob, path);
     });
 

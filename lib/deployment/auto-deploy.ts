@@ -127,7 +127,7 @@ export async function autoDeploy(
     const deploymentResult = await deployBrandPackage(config, (progress) => {
       updateProgress(deploymentId, {
         status: progress.status,
-        progress: 15 + (progress.progress * 0.5), // Scale 0-100 to 15-65
+        progress: 15 + ((progress.progress ?? 0) * 0.5), // Scale 0-100 to 15-65
         currentStage: progress.currentStage
       });
     });
