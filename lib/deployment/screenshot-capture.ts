@@ -267,6 +267,11 @@ export async function captureDeploymentScreenshot(
     // Capture screenshot
     const buffer = await capture.capture(deploymentUrl, finalConfig);
 
+    // Ensure viewport is defined (it should always be from analyzePageForOptimalCapture)
+    if (!finalConfig.viewport) {
+      throw new Error('Screenshot viewport configuration is missing');
+    }
+
     const metadata: Omit<ScreenshotMetadata, 'url' | 'localPath'> = {
       width: finalConfig.viewport.width,
       height: finalConfig.viewport.height,

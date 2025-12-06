@@ -40,14 +40,20 @@
     "docs:deploy": "cd website && vercel --prod"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.35.0",
+    "@modelcontextprotocol/sdk": "^1.0.4",
     "@web3icons/react": "^4.1.4",
+    "autoprefixer": "^10.4.20",
     "framer-motion": "^12.23.25",
+    "handlebars": "^4.7.8",
     "lucide-react": "^0.555.0",
     "modal": "^0.5.6",
     "next": "^15.1.0",
+    "postcss": "^8.4.49",
     "puppeteer": "^23.11.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "tailwindcss": "^3.4.17",
     "thirdweb": "^5.0.0"
   },
   "devDependencies": {
@@ -56,8 +62,6 @@
     "@types/react-dom": "^19",
     "eslint": "^8",
     "eslint-config-next": "^15.1.0",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
     "trufflehog": "^0.0.5",
     "typescript": "^5"
   }

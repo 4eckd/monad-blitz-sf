@@ -172,7 +172,7 @@ Output your analysis as a valid JSON object matching the exact structure provide
  */
 export function extractJSONFromResponse(responseText: string): string {
   // Remove leading/trailing whitespace
-  let text = responseText.trim();
+  const text = responseText.trim();
 
   // Check for markdown code block
   const codeBlockMatch = text.match(/```json\n([\s\S]*?)\n```/);
