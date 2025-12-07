@@ -1,0 +1,13 @@
+# Directories excluded from linting
+node_modules
+brands
+modal_functions
+.next
+out
+website
+
+# Non-critical lib directories (cut from scope per CLAUDE.md)
+lib/mcp
+lib/orchestrator
+lib/templates
+lib/deployment

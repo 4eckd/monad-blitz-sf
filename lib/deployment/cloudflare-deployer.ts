@@ -118,9 +118,13 @@ export class CloudflareDeployer {
 
     // Add files
     files.forEach((content, path) => {
-      const blob = content instanceof Buffer
-        ? new Blob([content])
-        : new Blob([content], { type: 'text/plain' });
+      let blobParts: BlobPart[];
+      if (content instanceof Buffer) {
+        blobParts = [new Uint8Array(content)];
+      } else {
+        blobParts = [content as string];
+      }
+      const blob = new Blob(blobParts, { type: content instanceof Buffer ? 'application/octet-stream' : 'text/plain' });
       formData.append(path, blob, path);
     });
 
@@ -185,7 +189,7 @@ export class CloudflareDeployer {
       id: result.id,
       projectName,
       deploymentUrl: result.url,
-      status: result.latest_stage.status,
+      status: result.latest_stage.status as 'building' | 'deploying' | 'queued' | 'success' | 'failure',
       buildLog: result.build_log,
       errorMessage: result.latest_stage.error_message,
       createdAt: new Date(result.created_on)

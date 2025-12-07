@@ -268,12 +268,12 @@ export async function captureDeploymentScreenshot(
     const buffer = await capture.capture(deploymentUrl, finalConfig);
 
     const metadata: Omit<ScreenshotMetadata, 'url' | 'localPath'> = {
-      width: finalConfig.viewport.width,
-      height: finalConfig.viewport.height,
+      width: finalConfig.viewport?.width ?? 1920,
+      height: finalConfig.viewport?.height ?? 1080,
       format: 'png',
       size: buffer.length,
       capturedAt: new Date(),
-      viewport: finalConfig.viewport
+      viewport: finalConfig.viewport ?? { width: 1920, height: 1080, deviceScaleFactor: 1 }
     };
 
     return { buffer, metadata };

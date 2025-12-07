@@ -33,10 +33,10 @@ interface BrandGenerationResponse {
   brandName: string;
   subdomain?: string;
   data?: {
-    brandAnalysis: any;
-    logos: any;
-    mockups: any;
-    designTokens: any;
+    brandAnalysis: Record<string, unknown>;
+    logos: Record<string, unknown>;
+    mockups: Record<string, unknown>;
+    designTokens: Record<string, unknown>;
     metadata: {
       generationTime: number;
       timestamp: number;

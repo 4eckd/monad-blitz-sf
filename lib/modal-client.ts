@@ -56,11 +56,11 @@ export interface Mockups {
 
 export interface DesignTokens {
   $schema: string;
-  color: any;
-  typography: any;
-  spacing: any;
-  'border-radius': any;
-  shadow?: any;
+  color: Record<string, unknown>;
+  typography: Record<string, unknown>;
+  spacing: Record<string, unknown>;
+  'border-radius': Record<string, unknown>;
+  shadow?: Record<string, unknown>;
 }
 
 export interface BrandPackage {

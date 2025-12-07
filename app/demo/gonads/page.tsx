@@ -25,6 +25,28 @@ interface GenerationPhase {
   duration?: number;
 }
 
+interface BrandGenerationResult {
+  success: boolean;
+  brandName: string;
+  subdomain: string;
+  data: {
+    brandAnalysis: {
+      name: string;
+      tagline: string;
+      colors: {
+        primary: string;
+        secondary: string;
+        accent: string;
+      };
+      personality: string[];
+    };
+    mockups: Record<string, string>;
+    metadata: {
+      generationTime: number;
+    };
+  };
+}
+
 export default function GonadsDemoPage() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [phases, setPhases] = useState<GenerationPhase[]>([
@@ -33,7 +55,7 @@ export default function GonadsDemoPage() {
     { phase: 3, name: 'Mockup Creation', status: 'pending' },
     { phase: 4, name: 'Finalizing Package', status: 'pending' }
   ]);
-  const [result, setResult] = useState<any>(null);
+  const [result, setResult] = useState<BrandGenerationResult | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   const updatePhase = (
@@ -366,7 +388,7 @@ export default function GonadsDemoPage() {
               <h3 className="text-2xl font-bold text-white mb-4">Mockups</h3>
               <div className="grid grid-cols-2 gap-4">
                 {Object.entries(result.data.mockups).map(
-                  ([name, data]: [string, any]) => (
+                  ([name, data]: [string, string]) => (
                     <div key={name} className="space-y-2">
                       <img
                         src={`data:image/png;base64,${data}`}

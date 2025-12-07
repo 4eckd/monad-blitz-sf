@@ -53,7 +53,7 @@ export function renderPrompt(
 export function getBrandAnalysisSystemPrompt(): string {
   try {
     return loadPromptTemplate('brand-generation');
-  } catch (error) {
+  } catch (_error) {
     // Fallback if template not found
     return DEFAULT_BRAND_ANALYSIS_SYSTEM_PROMPT;
   }
@@ -172,7 +172,7 @@ Output your analysis as a valid JSON object matching the exact structure provide
  */
 export function extractJSONFromResponse(responseText: string): string {
   // Remove leading/trailing whitespace
-  let text = responseText.trim();
+  const text = responseText.trim();
 
   // Check for markdown code block
   const codeBlockMatch = text.match(/```json\n([\s\S]*?)\n```/);
