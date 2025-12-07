@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Header, Footer, Card, CardHeader, CardTitle, CardContent, CardFooter, Button, Input } from '../components';
+import { Header, Footer, Card, CardHeader, CardTitle, CardContent, Button, Input } from '@/components';
 
 export default function GonadsPreview() {
   const [walletAddress, setWalletAddress] = useState<string>('');
@@ -85,10 +85,10 @@ export default function GonadsPreview() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-black text-white mb-4">
-              Why We're <span className="bg-gradient-to-r from-[#9333EA] to-[#14B8A6] bg-clip-text text-transparent">Different</span>
+              Why We&apos;re <span className="bg-gradient-to-r from-[#9333EA] to-[#14B8A6] bg-clip-text text-transparent">Different</span>
             </h2>
             <p className="text-xl text-[#CBD5E1] max-w-2xl mx-auto">
-              Not just another pfp project. We're building the boldest community in web3.
+              Not just another pfp project. We&apos;re building the boldest community in web3.
             </p>
           </div>
 
@@ -142,7 +142,7 @@ export default function GonadsPreview() {
                   Mint Your <span className="bg-gradient-to-r from-[#9333EA] to-[#14B8A6] bg-clip-text text-transparent">Pair</span>
                 </h2>
                 <p className="text-[#CBD5E1] mb-6">
-                  Public mint is now live! Get your Gonads before they're gone.
+                  Public mint is now live! Get your Gonads before they&apos;re gone.
                 </p>
 
                 <div className="space-y-4 mb-6">
